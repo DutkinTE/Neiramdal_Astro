@@ -23,6 +23,7 @@ body {
   z-index: 9999;
   transition: transform 0.075s ease-out, filter 0.3s ease;
   background-color: transparent;
+  mix-blend-mode: difference;
 }
 
 .cursor-inner {
@@ -36,12 +37,9 @@ body {
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.03s ease-out, filter 0.3s ease;
+  mix-blend-mode: difference;
 }
 
-.cursor-outer.invert,
-.cursor-inner.invert {
-  filter: invert(1); 
-}
 
 ::selection {
   background-color: #7855ed;
