@@ -12,17 +12,3 @@ document.addEventListener('mousemove', (e) => {
 
   cursorInner.style.transform = `translate(${clientX - 4.75}px, ${clientY - 4.75}px)`;
 });
-
-
-const invertTargets = document.querySelectorAll('.invert-cursor');
-
-invertTargets.forEach((target) => {
-  target.addEventListener('mouseenter', () => {
-    cursorOuter.classList.add('invert');
-    cursorInner.classList.add('invert');
-  });
-  target.addEventListener('mouseleave', () => {
-    cursorOuter.classList.remove('invert');
-    cursorInner.classList.remove('invert');
-  });
-});
