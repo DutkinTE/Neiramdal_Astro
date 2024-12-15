@@ -1,0 +1,110 @@
+<header class="main-header">
+  <div class="header-logo-a">
+    <img
+      alt="Neiramdal logo"
+      class="header-logo"
+      src="src/assets/images/logo.svg"
+      width="102"
+      height="56"
+    />
+    <img
+      alt="Neiramdal logo"
+      class="header-logo-hover"
+      src="src/assets/images/logo-hover.svg"
+      width="102"
+      height="56"
+    />
+  </div>
+  <div class="wrapper">
+    <nav>
+      <a id="main-nav-button" class="nav-button">Главная</a>
+      <a class="nav-button">Работы</a>
+      <a id="lang-button">EN</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #main-nav-button {
+    color: #7855ed;
+  }
+
+  #main-nav-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #7855ed;
+    transform: scaleX(1);
+    transform-origin: center;
+  }
+
+  .main-header {
+    width: 100%;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    position: relative;
+  }
+
+  .nav-button,
+  #lang-button {
+    margin-left: 121px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #fff;
+    transition:
+      color 0.5s ease,
+      text-decoration 0.3s ease;
+    position: relative;
+  }
+
+  .nav-button:hover,
+  #lang-button:hover {
+    color: #7855ed;
+  }
+
+  .nav-button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #7855ed;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.1s ease;
+  }
+
+  .nav-button:active::after {
+    transform: scaleX(1);
+  }
+
+  .header-logo,
+  .header-logo-hover {
+    transition: opacity 0.3s ease;
+    top: 0;
+    position: absolute;
+  }
+
+  .header-logo {
+    opacity: 1;
+  }
+
+  .header-logo-hover {
+    opacity: 0;
+  }
+
+  .header-logo-a:hover .header-logo {
+    opacity: 0;
+  }
+
+  .header-logo-a:hover .header-logo-hover {
+    opacity: 1;
+  }
+</style>

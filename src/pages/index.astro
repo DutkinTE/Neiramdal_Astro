@@ -1,16 +1,83 @@
 ---
-
+import MainHeader from "../components/main-header.astro";
+import MainContent from "../components/main-content.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Neiramdal</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/src/assets/images/white_logo.svg"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Neiramdal</title>
+  </head>
+  <body>
+    <main class="main">
+      <MainHeader />
+      <div class="container">
+        <video autoplay muted loop id="background-video" height="700px">
+          <source src="/src/assets/videos/Intro.mp4" type="video/mp4" />
+        </video>
+
+        <MainContent />
+      </div>
+    </main>
+    <div class="who">
+      <div class="container">
+        <div class="who-title">/Кто мы?</div>
+        <div class="who-content1"></div>
+        <div class="who-content1"></div>
+        <div class="who-title"></div>
+      </div>
+    </div>
+    <script>
+      import "../scripts/main.js";
+    </script>
+  </body>
 </html>
+
+<style>
+  #background-video {
+    position: absolute;
+    bottom: -200px;
+    right: 0px;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .who-title {
+    font-size: 48px;
+    color: #fff;
+    padding-top: 197px;
+  }
+
+  .who {
+    position: sticky;
+    background: url("src/assets/images/who.svg");
+    background-position: center top;
+    background-size: 1580px auto;
+    background-repeat: no-repeat;
+    height: 4155px;
+    z-index: 2;
+    justify-items: center;
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+
+  .main {
+    height: 750px;
+    top: 0;
+    position: sticky;
+    justify-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 5vh;
+    z-index: 1;
+    overflow: hidden;
+  }
+</style>
