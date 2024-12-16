@@ -5,6 +5,10 @@ body {
   cursor: none;
 }
 
+body::-webkit-scrollbar {
+  display: none; /* Скрытие ползунка для Chrome, Safari и Edge */
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
