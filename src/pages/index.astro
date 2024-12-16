@@ -17,7 +17,7 @@ import "../styles/global.css";
     <title>Neiramdal</title>
   </head>
   <body>
-    <main class="main">
+    <main id="main">
       <MainHeader />
       <div class="container">
         <video autoplay muted loop id="background-video" height="700px">
@@ -27,7 +27,9 @@ import "../styles/global.css";
         <MainContent />
       </div>
     </main>
-    <div class="who">
+    <canvas id="who-canvas"></canvas>
+
+    <div id="who">
       <div class="container">
         <div class="who-title">/Кто мы?</div>
         <div class="who-content1"></div>
@@ -42,6 +44,14 @@ import "../styles/global.css";
 </html>
 
 <style>
+  #who-canvas {
+    pointer-events: none;
+    position: relative;
+    display: block;
+    z-index: 999;
+    
+  }
+
   #background-video {
     position: absolute;
     bottom: -200px;
@@ -53,10 +63,11 @@ import "../styles/global.css";
   .who-title {
     font-size: 36px;
     color: #fff;
-    padding-top: 197px;
   }
 
-  .who {
+  #who {
+    padding-top: 100px;
+    background-color: #000;
     position: sticky;
     height: 4155px;
     z-index: 2;
@@ -65,7 +76,7 @@ import "../styles/global.css";
     padding-left: 70px;
   }
 
-  .main {
+  #main {
     height: 750px;
     top: 0;
     position: sticky;
