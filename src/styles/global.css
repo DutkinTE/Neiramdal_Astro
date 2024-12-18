@@ -9,6 +9,10 @@ body::-webkit-scrollbar {
   display: none; /* Скрытие ползунка для Chrome, Safari и Edge */
 }
 
+html {
+  width: 100%;
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
