@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-color: #000;
   font-family: "Play", sans-serif;
-  /* cursor: none; */
+  cursor: none;
 }
 
 body::-webkit-scrollbar {
@@ -54,6 +54,6 @@ html {
   color: #fff;
 }
 
-/* :hover {
+:hover {
   cursor: none;
-} */
+}
