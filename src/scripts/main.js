@@ -8,9 +8,9 @@ document.body.appendChild(cursorInner);
 document.addEventListener('mousemove', (e) => {
   const { clientX, clientY } = e;
 
-  cursorOuter.style.transform = `translate(${clientX - 25}px, ${clientY - 25}px)`;
+  cursorOuter.style.transform = `translate(${clientX - 19}px, ${clientY - 19}px)`;
 
-  cursorInner.style.transform = `translate(${clientX - 4.75}px, ${clientY - 4.75}px)`;
+  cursorInner.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
 });
 
 
@@ -74,3 +74,4 @@ window.addEventListener('resize', () => {
   canvas.height = 200;
   drawLineWithSmoothHill();
 });
+

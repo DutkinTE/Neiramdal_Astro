@@ -25,18 +25,16 @@ import "../styles/global.css";
       </div>
     </main>
     <canvas id="who-canvas"></canvas>
-
     <div id="who">
       <div class="container">
         <WhoContent />
         <div id="who-end">
           <WhoEnd />
         </div>
-        <div id="skills"></div>
       </div>
     </div>
+    <div id="skills"></div>
 
-    
     <script>
       import "../scripts/main.js";
     </script>
@@ -45,15 +43,16 @@ import "../styles/global.css";
 
 <style>
   #skills {
-    z-index: 3;
-    position: sticky;
+    position: relative;
+    z-index: 5;
     height: 1000px;
-    background-color: #000;
+    background-color: #fff;
   }
 
   #who-end {
     position: sticky;
     z-index: 2;
+    top: 0;
   }
 
   #who-canvas {
@@ -78,7 +77,7 @@ import "../styles/global.css";
     color: #fff;
     padding-top: 70px;
     background-color: #000;
-    position: sticky;
+    position: relative;
     height: 1100px;
     z-index: 2;
     justify-items: center;
