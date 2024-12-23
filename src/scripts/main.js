@@ -51,7 +51,7 @@ function drawLineWithSmoothHill() {
   ctx.closePath(); // Замыкаем путь
 
   // Закрашиваем область чёрным цветом
-  ctx.fillStyle = 'black';
+  ctx.fillStyle = '#070707';
   ctx.fill();
 
   // Обводим белую линию поверх
@@ -60,7 +60,7 @@ function drawLineWithSmoothHill() {
   ctx.arcTo(hillCenter - 100, startY, hillCenter - 70, startY - curveRadius, curveRadius);
   ctx.arcTo(hillCenter, startY - hillHeight, hillCenter + curveRadius, startY - hillHeight, curveRadius);
   ctx.lineTo(endX, startY - hillHeight);
-  ctx.strokeStyle = 'white';
+  ctx.strokeStyle = '#070707';
   ctx.lineWidth = 1;
   ctx.stroke();
 }
