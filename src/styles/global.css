@@ -29,7 +29,7 @@ html {
   left: 0;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.075s ease-out, filter 0.3s ease;
+  transition: transform 0.075s ease-out, filter 0.3s ease, width 0.1s ease, height 0.1s ease;
   background-color: transparent;
   mix-blend-mode: difference;
 }
@@ -44,7 +44,7 @@ html {
   left: 0;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.03s ease-out, filter 0.3s ease;
+  transition: transform 0.03s ease-out, filter 0.3s ease, width 0.05s ease, height 0.05s ease;
   mix-blend-mode: difference;
 }
 
