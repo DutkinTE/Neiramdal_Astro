@@ -1,14 +1,14 @@
 <div class="who-title" id="who-title2">/Почему именно мы?</div>
 <div class="row">
   <div class="card">
-    <div class="card-title">Индивидуальный <br />подход</div>
+    <div class="card-title" id="card-one">Индивидуальный <br />подход</div>
     <div class="card-content">
       Анализируем бизнес и разрабатываем продукт,<br />соответствующий Вашим
       целям
     </div>
   </div>
   <div class="card">
-    <div class="card-title">Соответствие<br />мировым стандартам</div>
+    <div class="card-title" id="card-two">Соответствие<br />мировым стандартам</div>
     <div class="card-content">
       В нашем арсенале только передовые <br /> инструменты и фреймворки, необходимые
       для <br /> надежных и адаптируемых решений
@@ -17,14 +17,14 @@
 </div>
 <div class="row">
   <div class="card">
-    <div class="card-title">Гарантия<br />результата</div>
+    <div class="card-title" id="card-three">Гарантия<br />результата</div>
     <div class="card-content">
       Наши проекты проходят тщательное <br /> тестирование на каждом этапе, что обеспечивает
       <br /> уверенность в конечном продукте
     </div>
   </div>
   <div class="card">
-    <div class="card-title">
+    <div class="card-title" id="card-four">
       Комплексная поддержка<br />на каждом этапе
     </div>
     <div class="card-content">
@@ -51,22 +51,79 @@
     width: 628px;
     padding: 30px;
     border-radius: 20px;
-    border: 1px solid #f5f5f5;
-    background: #000;
+    color: #5b5b5b;
+    background: #0b0b0b;
   }
 
-  /* Анимация движения градиента */
-  @keyframes gradientMove {
+  .card:hover {
+    color: #f5f5f5;
+  }
+
+  @keyframes moveGradient {
     0% {
-      background-position: 100% 0;
-    }
-    50% {
-      background-position: 0 0;
+      background-position: 0% center;
     }
     100% {
-      background-position: 100% 0;
+      background-position: 200% center;
     }
   }
+
+  .card:hover #card-one {
+    background-image: linear-gradient(
+      90deg,
+      #7855ED,
+      #A655ED,
+      #7855ED
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 5s linear infinite;
+  }
+
+  .card:hover #card-two {
+    background-image: linear-gradient(
+      90deg,
+      #440CFF,
+      #7855ED,
+      #440CFF
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 5s linear infinite;
+  }
+
+  .card:hover #card-three {
+    background-image: linear-gradient(
+      90deg,
+      #7855ED,
+      #0C7DFF,
+      #7855ED
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 5s linear infinite;
+  }
+
+  .card:hover #card-four {
+    background-image: linear-gradient(
+      90deg,
+      #2A68B8,
+      #7DD8FF,
+      #2A68B8
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 5s linear infinite;
+  }
+
 
   .card-title {
     font-weight: 300;
@@ -78,6 +135,7 @@
   .card-content {
     font-size: 20px;
     line-height: 130%;
+    transition: all 0.5s ;
   }
 
   #who-title2 {
