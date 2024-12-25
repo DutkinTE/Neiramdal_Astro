@@ -1,16 +1,18 @@
 body {
-  margin: 0;
   background-color: #020202;
-  font-family: "Play", sans-serif;
+  font-family: "Play", serif;
   cursor: none;
 }
 
 body::-webkit-scrollbar {
-  display: none; /* Скрытие ползунка для Chrome, Safari и Edge */
+  display: none; 
 }
 
-html {
+html, body{
   width: 100%;
+  margin: 0;
+  padding: 0;
+  justify-items: center;
 }
 
 .container {

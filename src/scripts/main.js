@@ -37,48 +37,56 @@ document.addEventListener('mouseup', (e) => {
   cursorInner.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
 });
 
+const hover = document.querySelectorAll('.hover');
 
+hover.forEach(element => {
+  element.addEventListener('mouseover', (e) => {
+    const { clientX, clientY } = e;
+    cursorInner.style.height = `4px`;
+    cursorInner.style.width = `4px`;
+    cursorInner.style.transform = `translate(${clientX - 0}px, ${clientY - 0}px)`;
+  });
+
+  element.addEventListener('mouseout', (e) => {
+    const { clientX, clientY } = e;
+    cursorInner.style.height = `8px`;
+    cursorInner.style.width = `8px`;
+    cursorInner.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
+  });
+});
 
 const canvas = document.getElementById('who-canvas');
 const ctx = canvas.getContext('2d');
 
-// Устанавливаем ширину и высоту Canvas на размеры окна
 canvas.width = window.innerWidth;
-canvas.height = 200; // Высота области рисования
+canvas.height = 200;
 
-// Функция для рисования и закрашивания области
 function drawLineWithSmoothHill() {
-  const startY = 176; // Вертикальная позиция линии
-  const startX = 0; // Начало линии слева
-  const endX = canvas.width; // Конец линии справа
-  const hillHeight = 176; // Высота горки
-  const curveRadius = 50; // Радиус закруглений
+  const startY = 176;
+  const startX = 0;
+  const endX = canvas.width;
+  const hillHeight = 176;
+  const curveRadius = 50;
 
-  // Смещение горки на четверть экрана влево
-  const hillCenter = endX / 2 - endX / 5; // Центр горки, смещенный влево
+  const hillCenter = endX / 2 - endX / 5;
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Очищаем Canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   ctx.beginPath();
-  ctx.moveTo(startX, startY); // Начало слева
+  ctx.moveTo(startX, startY);
 
-  // Плавный подъём с закруглением
   ctx.arcTo(hillCenter - 100, startY, hillCenter - 70, startY - curveRadius, curveRadius);
   ctx.arcTo(hillCenter, startY - hillHeight, hillCenter + curveRadius, startY - hillHeight, curveRadius);
 
-  // Двигаемся к правому краю
   ctx.lineTo(endX, startY - hillHeight);
 
-  // Закрываем путь вниз и влево
-  ctx.lineTo(endX, canvas.height); // Вниз к нижней части Canvas
-  ctx.lineTo(0, canvas.height); // Влево к нижнему углу
-  ctx.closePath(); // Замыкаем путь
+  ctx.lineTo(endX, canvas.height);
+  ctx.lineTo(0, canvas.height);
+  ctx.closePath();
 
-  // Закрашиваем область чёрным цветом
   ctx.fillStyle = '#070707';
   ctx.fill();
 
-  // Обводим белую линию поверх
   ctx.beginPath();
   ctx.moveTo(startX, startY);
   ctx.arcTo(hillCenter - 100, startY, hillCenter - 70, startY - curveRadius, curveRadius);
@@ -89,10 +97,8 @@ function drawLineWithSmoothHill() {
   ctx.stroke();
 }
 
-// Рисуем линию с горкой и закрашиваем нижнюю часть
 drawLineWithSmoothHill();
 
-// Подстраиваем Canvas при изменении размера окна
 window.addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   canvas.height = 200;
