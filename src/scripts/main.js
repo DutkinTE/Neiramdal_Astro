@@ -1,3 +1,4 @@
+
 const cursorOuter = document.createElement('div');
 const cursorInner = document.createElement('div');
 cursorOuter.classList.add('cursor-outer');
@@ -6,6 +7,11 @@ document.body.appendChild(cursorOuter);
 document.body.appendChild(cursorInner);
 
 const hover = document.querySelectorAll('.hover');
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0); // Прокручивает страницу к координатам (0, 0)
+});
+
 
 hover.forEach(element => {
   element.addEventListener('mousemove', (e) => {
