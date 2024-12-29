@@ -79,12 +79,18 @@ function handleScroll() {
     }
     else if (window.scrollY > document.getElementById('who').offsetTop + 50 && window.scrollY < document.getElementById('who').offsetTop + 400) {
       document.getElementById('who-title2').style.color = `#f5f5f5`;
+      document.getElementById('who-title').style.color = `#5B5B5B`;
+      document.querySelectorAll('.who-content1').forEach(element => {
+        element.style.color = `#5B5B5B`;
+      });
       window.scrollTo({
         top: document.getElementById('who').offsetTop + 400,
         behavior: 'smooth'
       });
     }
     else if (window.scrollY > document.getElementById('who').offsetTop + 450 ) {
+      document.getElementById('skills').style.color = `#f5f5f5`;
+      document.getElementById('who-title2').style.color = `#5B5B5B`;
       window.scrollTo({
         top: document.getElementById('who').offsetTop + 450 + window.innerHeight,
         behavior: 'smooth'
