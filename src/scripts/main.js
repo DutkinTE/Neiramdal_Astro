@@ -172,25 +172,23 @@ const headers = document.querySelectorAll('.skills-part-header');
 
 headers.forEach(header => {
   header.addEventListener('click', () => {
-    const content = header.nextElementSibling; // Следующий элемент (содержимое)
-    const icon = header.querySelector('.skills-part-icon'); // Иконка внутри заголовка
+    const content = header.nextElementSibling; 
+    const icon = header.querySelector('.skills-part-icon'); 
     const isOpen = content.classList.contains('open');
 
-    // Скрываем все открытые секции
     document.querySelectorAll('.skills-part-content').forEach(item => {
       item.classList.remove('open');
       item.style.maxHeight = null;
     });
 
     document.querySelectorAll('.skills-part-icon').forEach(icon => {
-      icon.classList.remove('rotate'); // Возвращаем иконку в исходное положение
+      icon.classList.remove('rotate'); 
     });
 
-    // Раскрываем текущую секцию, если она не была открыта
     if (!isOpen) {
       content.classList.add('open');
-      content.style.maxHeight = content.scrollHeight + 'px'; // Автоматически вычисляет высоту
-      icon.classList.add('rotate'); // Поворачиваем иконку
+      content.style.maxHeight = content.scrollHeight + 'px'; 
+      icon.classList.add('rotate'); 
     }
   });
 });
