@@ -48,16 +48,24 @@
 </div>
 
 <style>
+  .skills-part-icon {
+    transition: transform 0.5s ease;
+  }
+
+  .skills-part-icon.rotate {
+  transform: rotate(-90deg); /* Поворот на 90 градусов */
+}
+
   .skills-part-content {
     font-size: 16px;
     max-height: 0; /* Начальное состояние: скрыто */
     padding-top: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease; /* Анимация раскрытия */
+    transition: max-height 0.5s ease, padding 0.7s ease; /* Анимация раскрытия */
   }
 
   .skills-part-content.open {
-    padding-top: 50px;
+    padding-top: 30px;
     max-height: 200px; /* Максимальная высота (измените при необходимости) */
   }
 
