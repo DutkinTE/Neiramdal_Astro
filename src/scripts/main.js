@@ -53,6 +53,41 @@ document.addEventListener('mouseup', (e) => {
 });
 
 
+let lastScrollY = 0;
+let ticking = false;
+
+function handleScroll() {
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY) {
+    if (window.scrollY > 40 && window.scrollY < document.getElementById('who').offsetTop) {
+      window.scrollTo({
+        top: document.getElementById('who').offsetTop,
+        behavior: 'smooth'
+      });
+      document.getElementById('main-header').style.maxWidth = `1440px`;
+    }
+  } else if (currentScrollY < lastScrollY) {
+    if (window.scrollY < document.getElementById('who').offsetTop) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      document.getElementById('main-header').style.maxWidth = `100%`;
+    }
+
+  }
+
+  lastScrollY = currentScrollY;
+  ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(handleScroll);
+    ticking = true;
+  }
+});
 
 const canvas = document.getElementById('who-canvas');
 const ctx = canvas.getContext('2d');

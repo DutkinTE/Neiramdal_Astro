@@ -1,4 +1,4 @@
-<header class="main-header">
+<header id="main-header">
   <div class="header-logo-a">
     <img
       alt="Neiramdal logo"
@@ -48,7 +48,8 @@
     animation: moveGradient 5s linear infinite;
   }
 
-  .main-header {
+  #main-header {
+    transition: width 1s, max-width 1s;
     width: 100%;
     font-size: 20px;
     display: flex;
