@@ -1,37 +1,39 @@
 <div class="who-title" id="who-title2">/Почему именно мы?</div>
 <div class="row">
-  <div class="card">
-    <div class="card-title" id="card-one">Индивидуальный <br />подход</div>
-    <div class="card-content">
-      Анализируем бизнес и разрабатываем продукт,<br />соответствующий Вашим
-      целям
+  <div class="column-one">
+    <div class="card">
+      <div class="card-title" id="card-one">Индивидуальный <br />подход</div>
+      <div class="card-content">
+        Анализируем бизнес и разрабатываем продукт,<br />соответствующий Вашим
+        целям
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" id="card-two">
+        Соответствие<br />мировым стандартам
+      </div>
+      <div class="card-content">
+        В нашем арсенале только передовые <br /> инструменты и фреймворки, необходимые
+        для <br /> надежных и адаптируемых решений
+      </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-title" id="card-two">
-      Соответствие<br />мировым стандартам
+  <div class="column-two">
+    <div class="card">
+      <div class="card-title" id="card-three">Гарантия<br />результата</div>
+      <div class="card-content">
+        Наши проекты проходят тщательное <br /> тестирование на каждом этапе, что обеспечивает
+        <br /> уверенность в конечном продукте
+      </div>
     </div>
-    <div class="card-content">
-      В нашем арсенале только передовые <br /> инструменты и фреймворки, необходимые
-      для <br /> надежных и адаптируемых решений
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="card">
-    <div class="card-title" id="card-three">Гарантия<br />результата</div>
-    <div class="card-content">
-      Наши проекты проходят тщательное <br /> тестирование на каждом этапе, что обеспечивает
-      <br /> уверенность в конечном продукте
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-title" id="card-four">
-      Комплексная поддержка<br />на каждом этапе
-    </div>
-    <div class="card-content">
-      Сопровождаем проекты и после их запуска, <br /> помогая адаптироваться к быстро
-      меняющимся <br /> потребностям бизнеса
+    <div class="card">
+      <div class="card-title" id="card-four">
+        Комплексная поддержка<br />на каждом этапе
+      </div>
+      <div class="card-content">
+        Сопровождаем проекты и после их запуска, <br /> помогая адаптироваться к быстро
+        меняющимся <br /> потребностям бизнеса
+      </div>
     </div>
   </div>
 </div>
@@ -42,19 +44,29 @@
     font-weight: 500;
     margin-bottom: 40px;
   }
+
   .row {
     display: flex;
-    margin-bottom: 44px;
-    justify-content: space-between
+    justify-content: space-between;
+  }
+
+  .column-one {
+    width: 100%;
+    margin-right: 40px;
+  }
+
+  .column-two {
+    width: 100%;
   }
 
   .card {
     height: 160px;
-    width: 628px;
+    width: auto;
     padding: 30px;
     border-radius: 20px;
     color: #5b5b5b;
     background: #0b0b0b;
+    margin-bottom: 44px;
   }
 
   .card:hover {

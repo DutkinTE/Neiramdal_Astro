@@ -5,8 +5,23 @@ cursorInner.classList.add('cursor-inner');
 document.body.appendChild(cursorOuter);
 document.body.appendChild(cursorInner);
 
+const hover = document.querySelectorAll('.hover');
+
+hover.forEach(element => {
+  element.addEventListener('mousemove', (e) => {
+    const { clientX, clientY } = e;
+    cursorInner.style.height = `4px`;
+    cursorInner.style.width = `4px`;
+    cursorInner.style.transform = `translate(0px, 0px)`;
+  });
+});
+
 document.addEventListener('mousemove', (e) => {
   const { clientX, clientY } = e;
+  cursorOuter.style.width = `35px`;
+  cursorOuter.style.height = `35px`;
+  cursorInner.style.height = `8px`;
+  cursorInner.style.width = `8px`;
 
   cursorOuter.style.transform = `translate(${clientX - 18.5}px, ${clientY - 18.5}px)`;
 
@@ -37,23 +52,7 @@ document.addEventListener('mouseup', (e) => {
   cursorInner.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
 });
 
-const hover = document.querySelectorAll('.hover');
 
-hover.forEach(element => {
-  element.addEventListener('mouseover', (e) => {
-    const { clientX, clientY } = e;
-    cursorInner.style.height = `4px`;
-    cursorInner.style.width = `4px`;
-    cursorInner.style.transform = `translate(${clientX - 0}px, ${clientY - 0}px)`;
-  });
-
-  element.addEventListener('mouseout', (e) => {
-    const { clientX, clientY } = e;
-    cursorInner.style.height = `8px`;
-    cursorInner.style.width = `8px`;
-    cursorInner.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
-  });
-});
 
 const canvas = document.getElementById('who-canvas');
 const ctx = canvas.getContext('2d');
@@ -104,4 +103,3 @@ window.addEventListener('resize', () => {
   canvas.height = 200;
   drawLineWithSmoothHill();
 });
-
