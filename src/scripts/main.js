@@ -66,6 +66,23 @@ function handleScroll() {
         behavior: 'smooth'
       });
       document.getElementById('main-header').style.maxWidth = `1440px`;
+      document.getElementById('who-title').style.color = `#f5f5f5`;
+      document.querySelectorAll('.who-content1').forEach(element => {
+        element.style.color = `#f5f5f5`;
+      });
+    }
+    else if (window.scrollY > document.getElementById('who').offsetTop + 50 && window.scrollY < document.getElementById('who').offsetTop + 400) {
+      document.getElementById('who-title2').style.color = `#f5f5f5`;
+      window.scrollTo({
+        top: document.getElementById('who').offsetTop + 400,
+        behavior: 'smooth'
+      });
+    }
+    else if (window.scrollY > document.getElementById('who').offsetTop + 450 ) {
+      window.scrollTo({
+        top: document.getElementById('who').offsetTop + 450 + window.innerHeight,
+        behavior: 'smooth'
+      });
     }
   } else if (currentScrollY < lastScrollY) {
     if (window.scrollY < document.getElementById('who').offsetTop) {
