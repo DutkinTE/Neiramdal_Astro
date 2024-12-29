@@ -167,3 +167,22 @@ window.addEventListener('resize', () => {
   canvas.height = 200;
   drawLineWithSmoothHill();
 });
+
+const headers = document.querySelectorAll('.skills-part-header');
+
+headers.forEach(header => {
+  header.addEventListener('click', () => {
+    const content = header.nextElementSibling;
+    const isOpen = content.classList.contains('open');
+
+    document.querySelectorAll('.skills-part-content').forEach(item => {
+      item.classList.remove('open');
+      item.style.maxHeight = 0;
+    });
+
+    if (!isOpen) {
+      content.classList.add('open');
+      content.style.maxHeight = content.scrollHeight + 'px'; // Автоматически вычисляет высоту
+    }
+  });
+});

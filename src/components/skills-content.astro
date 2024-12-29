@@ -1,23 +1,84 @@
 <div class="container">
   <div class="skills-title">Что мы умеем?</div>
   <div class="skills-parts">
-    <div class="skills-part">Мобильная разработка</div>
-    <div class="skills-part">Разработка десктопных приложений</div>
-    <div class="skills-part">Веб-разработка</div>
+    <div class="skills-part">
+      <div class="skills-part-header">
+        <div class="skills-part-title">Мобильная разработка</div>
+        <img
+          alt="arrow down"
+          class="skills-part-icon"
+          src="assets/images/arrow_down.svg"
+          width="30"
+          height="18"
+        />
+      </div>
+
+      <div class="skills-part-content">Данила напиши текст пожалуйста</div>
+    </div>
+
+    <div class="skills-part">
+      <div class="skills-part-header">
+        <div class="skills-part-title">Разработка десктопных приложений</div>
+        <img
+          alt="arrow down"
+          class="skills-part-icon"
+          src="assets/images/arrow_down.svg"
+          width="30"
+          height="18"
+        />
+      </div>
+
+      <div class="skills-part-content">Данила напиши текст пожалуйста</div>
+    </div>
+    <div class="skills-part">
+      <div class="skills-part-header">
+        <div class="skills-part-title">Веб-разработка</div>
+        <img
+          alt="arrow down"
+          class="skills-part-icon"
+          src="assets/images/arrow_down.svg"
+          width="30"
+          height="18"
+        />
+      </div>
+
+      <div class="skills-part-content">Данила напиши текст пожалуйста</div>
+    </div>
   </div>
 </div>
 
 <style>
+  .skills-part-content {
+    font-size: 16px;
+    max-height: 0; /* Начальное состояние: скрыто */
+    padding-top: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease; /* Анимация раскрытия */
+  }
+
+  .skills-part-content.open {
+    padding-top: 50px;
+    max-height: 200px; /* Максимальная высота (измените при необходимости) */
+  }
+
   .skills-parts {
     font-size: 24px;
     border-top: #f5f5f5 1px solid;
   }
 
+  .skills-part-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .skills-part {
     padding-left: 60px;
+    padding-right: 60px;
     padding-top: 65px;
     padding-bottom: 65px;
     border-bottom: #f5f5f5 1px solid;
+    
   }
 
   .skills-title {
