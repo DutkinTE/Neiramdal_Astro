@@ -62,15 +62,12 @@ document.addEventListener('mouseup', (e) => {
 let lastScrollY = 0;
 let ticking = false;
 
+
 function handleScroll() {
   const currentScrollY = window.scrollY;
 
   if (currentScrollY > lastScrollY) {
     if (window.scrollY > 40 && window.scrollY < document.getElementById('who').offsetTop) {
-      window.scrollTo({
-        top: document.getElementById('who').offsetTop,
-        behavior: 'smooth'
-      });
       document.getElementById('main-header').style.maxWidth = `1440px`;
       document.getElementById('who-title').style.color = `#f5f5f5`;
       document.querySelectorAll('.who-content1').forEach(element => {
@@ -83,25 +80,14 @@ function handleScroll() {
       document.querySelectorAll('.who-content1').forEach(element => {
         element.style.color = `#5B5B5B`;
       });
-      window.scrollTo({
-        top: document.getElementById('who').offsetTop + 400,
-        behavior: 'smooth'
-      });
     }
     else if (window.scrollY > document.getElementById('who').offsetTop + 450 ) {
       document.getElementById('skills').style.color = `#f5f5f5`;
       document.getElementById('who-title2').style.color = `#5B5B5B`;
-      window.scrollTo({
-        top: document.getElementById('who').offsetTop + 450 + window.innerHeight,
-        behavior: 'smooth'
-      });
     }
   } else if (currentScrollY < lastScrollY) {
     if (window.scrollY < document.getElementById('who').offsetTop) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      
       document.getElementById('main-header').style.maxWidth = `100%`;
     }
 
@@ -116,6 +102,7 @@ window.addEventListener('scroll', () => {
     requestAnimationFrame(handleScroll);
     ticking = true;
   }
+  
 });
 
 const canvas = document.getElementById('who-canvas');

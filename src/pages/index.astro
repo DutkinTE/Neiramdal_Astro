@@ -33,7 +33,7 @@ import "../styles/global.css";
     </main>
     <canvas id="who-canvas"></canvas>
     <div id="who">
-      <div class="container">
+      <div class="container" id="who-content">
         <WhoContent />
       </div>
       <div id="who-end">
@@ -76,6 +76,10 @@ import "../styles/global.css";
     background-color: #020202;
     color: #5B5B5B;
     transition: color 0.5s ease;
+  }
+
+  #who-content {
+    margin-bottom: 30px;
   }
 
   #who-end {
