@@ -1,67 +1,59 @@
----
-import WorksHeader from "../components/works-header.astro";
-import "../styles/global.css";
----
-
-<html lang="ru">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="src/assets/images/white_logo.svg"
-    />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Neiramdal</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation from Bottom</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="main">
-      <WorksHeader />
-      <center>Coming soon...</center>
-    </main>
+    <div class="container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+
     <script>
-      import "../scripts/main.js";
+      import "../scripts/works.js";
     </script>
   </body>
 </html>
 
 <style>
-    center {
-        color: #fff
-    }
-  #background-video {
-    position: absolute;
-    bottom: -200px;
-    right: 0px;
-    object-fit: cover;
-    z-index: -1;
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
   }
 
-  .who-title {
-    font-size: 36px;
-    color: #fff;
-    padding-top: 197px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .who {
-    position: sticky;
-    height: 4155px;
-    z-index: 2;
-    justify-items: center;
-    padding-right: 70px;
-    padding-left: 70px;
+  .box {
+    width: 200px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
   }
 
-  .main {
-    height: 750px;
-    top: 0;
-    position: sticky;
-    justify-items: center;
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-top: 5vh;
-    z-index: 1;
-    overflow: hidden;
+  .box.show {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>

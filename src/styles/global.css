@@ -5,10 +5,11 @@ body {
 }
 
 body::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
-html, body{
+html,
+body {
   min-width: 1024px;
   width: 100%;
   margin: 0;
@@ -32,7 +33,8 @@ html, body{
   left: 0;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.075s ease-out, filter 0.3s ease, width 0.1s ease, height 0.1s ease;
+  transition: transform 0.075s ease-out, filter 0.3s ease, width 0.1s ease,
+    height 0.1s ease;
   background-color: transparent;
   mix-blend-mode: difference;
 }
@@ -47,10 +49,21 @@ html, body{
   left: 0;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.03s ease-out, filter 0.3s ease, width 0.05s ease, height 0.05s ease;
+  transition: transform 0.03s ease-out, filter 0.3s ease, width 0.05s ease,
+    height 0.05s ease;
   mix-blend-mode: difference;
 }
 
+.main-animation {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 ::selection {
   background-color: #7855ed;
