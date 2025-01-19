@@ -15,6 +15,8 @@ function handleScroll() {
       document.querySelectorAll('.who-content1').forEach(element => {
         element.style.color = `#f5f5f5`;
       });
+      animation('.who-content-animation');
+      animation('.who-end-animation');
     }
     else if (window.scrollY > 1190 && window.scrollY < 1940) {
       document.getElementById('who-title2').style.color = `#f5f5f5`;
@@ -22,6 +24,7 @@ function handleScroll() {
       document.querySelectorAll('.who-content1').forEach(element => {
         element.style.color = `#5B5B5B`;
       });
+      animation('.skills-animation');
     }
     else if (window.scrollY > 1940) {
       document.getElementById('skills').style.color = `#f5f5f5`;

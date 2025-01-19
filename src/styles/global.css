@@ -54,7 +54,7 @@ body {
   mix-blend-mode: difference;
 }
 
-.main-animation {
+.main-animation, .who-content-animation, .who-end-animation, .skills-animation {
   transform: translateY(50px);
   opacity: 0;
   transition: opacity 0.5s ease, transform 0.5s ease;
