@@ -28,7 +28,7 @@ function drawLineWithSmoothHill() {
   ctx.lineTo(0, canvas.height);
   ctx.closePath();
 
-  ctx.fillStyle = '#070707';
+  ctx.fillStyle = 'rgba(7, 7, 7, 0.45)';
   ctx.fill();
 
   ctx.beginPath();
@@ -36,7 +36,7 @@ function drawLineWithSmoothHill() {
   ctx.arcTo(hillCenter - 100, startY, hillCenter - 70, startY - curveRadius, curveRadius);
   ctx.arcTo(hillCenter, startY - hillHeight, hillCenter + curveRadius, startY - hillHeight, curveRadius);
   ctx.lineTo(endX, startY - hillHeight);
-  ctx.strokeStyle = '#070707';
+  ctx.strokeStyle = 'rgba(7, 7, 7, 0.45)';
   ctx.lineWidth = 1;
   ctx.stroke();
 }

@@ -5,6 +5,7 @@ import WhoContent from "../components/who-content.astro";
 import WhoEnd from "../components/who-end.astro";
 import SkillsContent from "../components/skills-content.astro";
 import Footer from "../components/footer.astro";
+import MainIsland from "../components/main-island.astro";
 import "../styles/global.css";
 ---
 
@@ -20,13 +21,21 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <title>Neiramdal</title> 
+    <title>Neiramdal</title>
   </head>
   <body onload="window.scrollTo(0, 0);">
+    <!-- <MainIsland /> -->
     <main id="main">
       <MainHeader />
       <div class="container">
-        <video autoplay muted loop class="main-animation" id="background-video" height="700px">
+        <video
+          autoplay
+          muted
+          loop
+          class="main-animation"
+          id="background-video"
+          height="700px"
+        >
           <source src="assets/videos/intro.mp4" type="video/mp4" />
         </video>
         <MainContent />
@@ -110,7 +119,8 @@ import "../styles/global.css";
     font-weight: 100;
     color: #f5f5f5;
     padding-top: 70px;
-    background-color: #070707;
+    background-color: rgba(7, 7, 7, 0.45);
+    backdrop-filter: blur(45px);
     position: relative;
     z-index: 2;
     justify-items: center;
