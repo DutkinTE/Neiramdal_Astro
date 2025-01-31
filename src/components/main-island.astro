@@ -15,23 +15,65 @@
       height="56"
     />
   </div>
-  
+  <div class="button-container">
+    <div id="nav-who-we-are" class="nav">Кто мы</div>
+    <div id="nav-skills" class="nav">Навыки</div>
+    <div id="nav-projects" class="nav">Проекты</div>
+    <div id="nav-contacts" class="nav">Контакты</div>
+  </div>
 </div>
 
 <style>
+  .nav {
+    font-size: 16px;
+    color: #f5f5f5;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: solid 0.5px #f5f5f5;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .nav:hover {
+    background-color: #f5f5f5;
+    color: #0b0b0b;
+    border: #0b0b0b solid 0.5px;
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
   #island {
     position: fixed;
     top: 57px;
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 999;
-    max-width: 1000px;
-    min-width: 600px;
-    width: 100%;
+    max-width: 1440px;
+    min-width: 800px;
+    width: 80%;
     height: 80px;
-    background-color: aqua;
+    background-color: rgba(22, 22, 22, 0.55);
     display: flex;
     align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    justify-content: space-between
   }
 
   .header-logo,
