@@ -85,7 +85,7 @@
 
     <div class="skills-part">
       <div class="skills-part-header">
-        <div class="skills-part-title skills-animation" >
+        <div class="skills-part-title skills-animation">
           Создание веб-приложений и веб-сайтов
         </div>
         <img
@@ -165,7 +165,9 @@
     </div>
     <div class="skills-part">
       <div class="skills-part-header">
-        <div class="skills-part-title skills-animation">Разработка чат-ботов</div>
+        <div class="skills-part-title skills-animation">
+          Разработка чат-ботов
+        </div>
         <img
           alt="arrow down"
           class="skills-part-icon"
@@ -233,9 +235,9 @@
         </div>
         <div class="part2-footer">
           Сделайте общение с клиентами быстрее, удобнее и продуктивнее с помощью
-          чат-ботов от <br> Neiramdal. Мы создадим решение, которое станет
-          незаменимым помощником для вашего <br> бизнеса и принесет вам
-          дополнительные конкурентные преимущества.
+          чат-ботов от <br /> Neiramdal. Мы создадим решение, которое станет незаменимым
+          помощником для вашего <br /> бизнеса и принесет вам дополнительные конкурентные
+          преимущества.
         </div>
       </div>
     </div>
@@ -328,14 +330,16 @@
     max-height: 0; /* Начальное состояние: скрыто */
     padding-top: 0;
     overflow: hidden;
+    opacity: 0;
     transition:
+      opacity 0.5s ease,
       max-height 1s ease,
       padding 1.2s ease; /* Анимация раскрытия */
   }
 
   .skills-part-content.open {
     padding-top: 90px;
-    max-height: 200px; /* Максимальная высота (измените при необходимости) */
+    max-height: 0px; /* Максимальная высота (измените при необходимости) */
   }
 
   .skills-parts {

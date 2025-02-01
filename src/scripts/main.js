@@ -10,9 +10,13 @@ headers.forEach(header => {
     const icon = header.querySelector('.skills-part-icon');
     const isOpen = content.classList.contains('open');
 
+
+
     document.querySelectorAll('.skills-part-content').forEach(item => {
+      content.style.opacity = 0;
       item.classList.remove('open');
       item.style.maxHeight = null;
+
     });
 
     document.querySelectorAll('.skills-part-icon').forEach(icon => {
@@ -20,9 +24,23 @@ headers.forEach(header => {
     });
 
     if (!isOpen) {
-      content.classList.add('open');
-      content.style.maxHeight = content.scrollHeight + 'px';
-      icon.classList.add('rotate');
+      function firstTask() {
+        return new Promise((resolve) => {
+          content.classList.add('open');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.classList.add('rotate');
+          resolve();
+        });
+      }
+
+      async function runTasks() {
+        await firstTask(); // Ждем завершения первой задачи
+
+        setTimeout(() => {
+          content.style.opacity = 1;
+        }, 500);
+      }
+      runTasks();
     }
   });
 });
@@ -59,7 +77,7 @@ document.getElementById('island-hover').addEventListener('mouseleave', (e) => {
         document.getElementById('island').style.borderBottom = `0.1px solid #f5f5f5`;
       }, 1500);
     }
-    
+
   }
 });
 
