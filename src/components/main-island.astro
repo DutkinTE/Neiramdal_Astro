@@ -1,29 +1,48 @@
-<div id="island">
-  <div class="header-logo-a main-animation" id="island-logo">
-    <img
-      alt="Neiramdal logo"
-      class="header-logo"
-      src="assets/images/logo.svg"
-      width="102"
-      height="56"
-    />
-    <img
-      alt="Neiramdal logo"
-      class="header-logo-hover"
-      src="assets/images/logo-hover.svg"
-      width="102"
-      height="56"
-    />
+<div id="island-hover">
+  <div id="island-hover-hidden">
+
   </div>
-  <div class="button-container">
-    <div id="nav-who-we-are" class="nav">Кто мы</div>
-    <div id="nav-skills" class="nav">Навыки</div>
-    <div id="nav-projects" class="nav">Проекты</div>
-    <div id="nav-contacts" class="nav">Контакты</div>
+  <div id="island">
+    <div class="header-logo-a main-animation" id="island-logo">
+      <img
+        alt="Neiramdal logo"
+        class="header-logo"
+        src="assets/images/logo.svg"
+        width="102"
+        height="56"
+      />
+      <img
+        alt="Neiramdal logo"
+        class="header-logo-hover"
+        src="assets/images/logo-hover.svg"
+        width="102"
+        height="56"
+      />
+    </div>
+    <div class="button-container">
+      <div id="nav-who-we-are" class="nav">Кто мы</div>
+      <div id="nav-skills" class="nav">Навыки</div>
+      <div id="nav-projects" class="nav">Проекты</div>
+      <div id="nav-contacts" class="nav">Контакты</div>
+    </div>
   </div>
 </div>
 
+
 <style>
+  #island-hover-hidden {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 1440px;
+    min-width: 800px;
+    z-index: 9999;
+    width: calc(80% + 40px);
+    height: 30px;
+    background-color: transparent;
+    z-index: 9998;
+  }
   .nav {
     font-size: 16px;
     color: #f5f5f5;
@@ -45,8 +64,8 @@
 
   .button-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
   }
 
   button {
