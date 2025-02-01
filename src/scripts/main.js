@@ -49,14 +49,17 @@ document.getElementById('island-hover').addEventListener('mouseenter', () => {
   }
 });
 
-document.getElementById('island-hover').addEventListener('mouseleave', () => {
+document.getElementById('island-hover').addEventListener('mouseleave', (e) => {
+  const { clientX, clientY } = e;
   if (document.getElementById('island').style.top == '30px') {
-
-    setTimeout(() => {
-      document.getElementById('island-logo').style.opacity = `0`;
-      document.getElementById('island').style.top = `${-70}px`;
-      document.getElementById('island').style.borderBottom = `0.1px solid #f5f5f5`;
-    }, 1500);
+    if (clientY > 110) {
+      setTimeout(() => {
+        document.getElementById('island-logo').style.opacity = `0`;
+        document.getElementById('island').style.top = `${-70}px`;
+        document.getElementById('island').style.borderBottom = `0.1px solid #f5f5f5`;
+      }, 1500);
+    }
+    
   }
 });
 
