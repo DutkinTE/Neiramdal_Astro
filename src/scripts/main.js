@@ -42,9 +42,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById('island').addEventListener('mouseenter', () => {
-    if (document.getElementById('island').style.top == '-70px') {
-      document.getElementById('island-logo').style.opacity = `1`;
-      document.getElementById('island').style.top = `30px`;
-      document.getElementById('island').style.borderBottom = `none`;
-    }
+  if (document.getElementById('island').style.top == '-70px') {
+    document.getElementById('island-logo').style.opacity = `1`;
+    document.getElementById('island').style.top = `30px`;
+    document.getElementById('island').style.borderBottom = `none`;
+  }
+});
+
+document.getElementById('island').addEventListener('mouseleave', () => {
+  if (document.getElementById('island').style.top == '30px') {
+
+    setTimeout(() => {
+      document.getElementById('island-logo').style.opacity = `0`;
+      document.getElementById('island').style.top = `${-70}px`;
+      document.getElementById('island').style.borderBottom = `0.1px solid #f5f5f5`;
+    }, 1500);
+  }
+});
+
+document.getElementById('island-logo').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
 });
