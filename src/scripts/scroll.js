@@ -9,8 +9,22 @@ function handleScroll() {
   const currentScrollY = window.scrollY;
 
   if (currentScrollY > lastScrollY) {
-    if (window.scrollY > 300 && window.scrollY < 890) {
-      document.getElementById('main-header').style.maxWidth = `1440px`;
+    if (currentScrollY < 700) {
+      document.getElementById('main-header').style.maxWidth = `${window.innerWidth - ((window.innerWidth - 1440) / 700) * currentScrollY}px`;
+    }
+
+    if (currentScrollY >= 700) {
+      document.getElementById('island').style.opacity = `${0.01 * (currentScrollY - 700)}`;
+      document.getElementById('main-header').style.opacity = `${1 - (0.01 * (currentScrollY - 700))}`;
+    }
+
+    if (currentScrollY > document.getElementById('who').offsetTop) {
+      document.getElementById('island-logo').style.opacity = `0`;
+      document.getElementById('island').style.top = `${-70}px`;
+      document.getElementById('island').style.borderBottom = `0.1px solid #f5f5f5`;
+    }
+
+    if (currentScrollY > 300 && currentScrollY < 890) {
       document.getElementById('who-title').style.color = `#f5f5f5`;
       document.querySelectorAll('.who-content1').forEach(element => {
         element.style.color = `#f5f5f5`;
@@ -18,7 +32,7 @@ function handleScroll() {
       animation('.who-content-animation');
       animation('.who-end-animation');
     }
-    else if (window.scrollY > 1190 && window.scrollY < 1940) {
+    else if (currentScrollY > 1190 && currentScrollY < 1940) {
       document.getElementById('who-title2').style.color = `#f5f5f5`;
       document.getElementById('who-title').style.color = `#5B5B5B`;
       document.querySelectorAll('.who-content1').forEach(element => {
@@ -26,34 +40,46 @@ function handleScroll() {
       });
       animation('.skills-animation');
     }
-    else if (window.scrollY > 1940) {
+    else if (currentScrollY > 1940) {
       document.getElementById('skills').style.color = `#f5f5f5`;
       document.getElementById('who-title2').style.color = `#5B5B5B`;
     }
   }
   else if (currentScrollY < lastScrollY) {
-    if (window.scrollY < document.getElementById('who').offsetTop) {
-      document.getElementById('main-header').style.maxWidth = `100%`;
+    if (currentScrollY < 700) {
+      document.getElementById('main-header').style.maxWidth = `${window.innerWidth - ((window.innerWidth - 1440) / 700) * currentScrollY}px`;
+    }
+
+    document.getElementById('island').style.opacity = `${0.01 * (currentScrollY - 700)}`;
+    document.getElementById('main-header').style.opacity = `${1 - (0.01 * (currentScrollY - 700))}`;
+
+    if (currentScrollY > document.getElementById('who').offsetTop) {
+      document.getElementById('island-logo').style.opacity = `1`;
+      document.getElementById('island').style.top = `30px`;
+      document.getElementById('island').style.borderBottom = `none`;
+    }
+
+    if (currentScrollY < document.getElementById('who').offsetTop) {
       document.getElementById('who-title').style.color = `#5B5B5B`;
       document.querySelectorAll('.who-content1').forEach(element => {
         element.style.color = `#5B5B5B`;
       });
     }
-    if (window.scrollY > 300 && window.scrollY < 890) {
+    if (currentScrollY > 300 && currentScrollY < 890) {
       document.getElementById('who-title').style.color = `#f5f5f5`;
       document.getElementById('who-title2').style.color = `#5B5B5B`;
       document.querySelectorAll('.who-content1').forEach(element => {
         element.style.color = `#f5f5f5`;
       });
     }
-    else if (window.scrollY > 1190 && window.scrollY < 1940) {
+    else if (currentScrollY > 1190 && currentScrollY < 1940) {
       document.getElementById('who-title2').style.color = `#f5f5f5`;
       document.getElementById('skills').style.color = `#5B5B5B`;
       document.querySelectorAll('.who-content1').forEach(element => {
         element.style.color = `#5B5B5B`;
       });
     }
-    else if (window.scrollY > 1940) {
+    else if (currentScrollY > 1940) {
       document.getElementById('skills').style.color = `#f5f5f5`;
       document.getElementById('who-title2').style.color = `#5B5B5B`;
     }

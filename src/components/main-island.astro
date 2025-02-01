@@ -1,5 +1,5 @@
 <div id="island">
-  <div class="header-logo-a main-animation">
+  <div class="header-logo-a main-animation" id="island-logo">
     <img
       alt="Neiramdal logo"
       class="header-logo"
@@ -60,7 +60,7 @@
     top: 30px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 999;
+    z-index: 9999;
     max-width: 1440px;
     min-width: 800px;
     width: 80%;
@@ -75,6 +75,8 @@
     border-radius: 20px;
     justify-content: space-between;
     backdrop-filter: blur(30px);
+    opacity: 0;
+    transition: top 0.3s;
   }
 
   .header-logo,

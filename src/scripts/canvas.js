@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById('who-canvas');
 const ctx = canvas.getContext('2d');
 
@@ -18,25 +17,26 @@ function drawLineWithSmoothHill() {
 
   ctx.beginPath();
   ctx.moveTo(startX, startY);
-
   ctx.arcTo(hillCenter - 100, startY, hillCenter - 70, startY - curveRadius, curveRadius);
   ctx.arcTo(hillCenter, startY - hillHeight, hillCenter + curveRadius, startY - hillHeight, curveRadius);
-
   ctx.lineTo(endX, startY - hillHeight);
-
   ctx.lineTo(endX, canvas.height);
   ctx.lineTo(0, canvas.height);
   ctx.closePath();
 
-  ctx.fillStyle = 'rgba(7, 7, 7, 0.45)';
+  // Apply blur effect
+  ctx.fillStyle = 'rgba(7, 7, 7, 1)';
+  ctx.filter = 'blur(45px)';
   ctx.fill();
 
+  // Обводка с размытием
   ctx.beginPath();
   ctx.moveTo(startX, startY);
   ctx.arcTo(hillCenter - 100, startY, hillCenter - 70, startY - curveRadius, curveRadius);
   ctx.arcTo(hillCenter, startY - hillHeight, hillCenter + curveRadius, startY - hillHeight, curveRadius);
   ctx.lineTo(endX, startY - hillHeight);
-  ctx.strokeStyle = 'rgba(7, 7, 7, 0.45)';
+  ctx.strokeStyle = 'rgba(7, 7, 7, 0)';
+  
   ctx.lineWidth = 1;
   ctx.stroke();
 }
