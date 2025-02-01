@@ -88,3 +88,4 @@ document.getElementById('island-logo').addEventListener('click', () => {
   });
 
 });
+
