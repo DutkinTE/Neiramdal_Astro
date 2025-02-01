@@ -14,6 +14,7 @@ function handleScroll() {
     }
 
     if (currentScrollY >= 700) {
+      document.getElementById('island').style.display = `flex`;
       document.getElementById('island').style.opacity = `${0.01 * (currentScrollY - 700)}`;
       document.getElementById('main-header').style.opacity = `${1 - (0.01 * (currentScrollY - 700))}`;
     }
@@ -57,6 +58,10 @@ function handleScroll() {
       document.getElementById('island-logo').style.opacity = `1`;
       document.getElementById('island').style.top = `30px`;
       document.getElementById('island').style.borderBottom = `none`;
+    }
+
+    if (currentScrollY < 700) {
+      document.getElementById('island').style.display = `none`;
     }
 
     if (currentScrollY < document.getElementById('who').offsetTop) {
