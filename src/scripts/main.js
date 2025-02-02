@@ -27,6 +27,7 @@ headers.forEach(header => {
         return new Promise((resolve) => {
           header.parentElement.style.backgroundColor = `#020202`;
           header.parentElement.style.color = `#f5f5f5`;
+          header.parentElement.querySelector('.skills-part-icon').style.filter = `none`;
           content.classList.add('open');
           content.style.maxHeight = content.scrollHeight + 'px';
           icon.classList.add('rotate');

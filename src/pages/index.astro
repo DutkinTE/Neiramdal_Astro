@@ -52,9 +52,8 @@ import "../styles/global.css";
       <div id="skills">
         <SkillsContent />
       </div>
-      <div id="our-works">
-
-      </div>
+      <div id="our-works"></div>
+      <div id="order"></div>
       <Footer />
     </div>
 
@@ -71,8 +70,24 @@ import "../styles/global.css";
 </html>
 
 <style>
+  #order {
+    height: 792px;
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 70px;
+    background-color: #020202;
+    position: relative;
+    z-index: 4;
+  }
+
   #our-works {
+    position: relative;
     height: 965px;
+    background-color: #070707;
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 70px;
+    z-index: 3;
   }
   #skills {
     max-width: 1440px;
@@ -85,7 +100,7 @@ import "../styles/global.css";
     padding-top: 70px;
     padding-bottom: 250px;
     position: sticky;
-    z-index: 5;
+    z-index: 3;
     background-color: #020202;
     color: #5b5b5b;
     transition: color 0.5s ease;
