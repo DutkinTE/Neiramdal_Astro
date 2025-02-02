@@ -112,21 +112,50 @@ document.getElementById('island-logo').addEventListener('click', () => {
   });
 });
 
-
 const buttons = document.querySelectorAll(".nav");
   const hoverBg = document.querySelector(".hover-bg");
 
-  buttons.forEach((btn) => {
-    btn.addEventListener("mouseenter", (e) => {
-      const { left, width } = e.target.getBoundingClientRect();
-      const containerLeft = e.target.parentElement.getBoundingClientRect().left;
-      btn.style.color = `#020202`;
-      hoverBg.style.width = `${width}px`;
-      hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
-    });
-    btn.addEventListener("mouseleave", (e) => {
-      const { left, width } = e.target.getBoundingClientRect();
-      const containerLeft = e.target.parentElement.getBoundingClientRect().left;
-      btn.style.color = `#f5f5f5`;
-    });
-  });
+
+document.getElementById('nav-who-we-are').addEventListener('mouseenter', (e) => {
+  const { left, width } = e.target.getBoundingClientRect();
+  const containerLeft = e.target.parentElement.getBoundingClientRect().left;
+  document.getElementById('nav-who-we-are').style.color = `#020202`;
+  hoverBg.style.width = `${width}px`;
+  hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
+  document.getElementById('nav-skills').style.color = `#f5f5f5`;
+  document.getElementById('nav-projects').style.color = `#f5f5f5`;
+  document.getElementById('nav-contacts').style.color = `#f5f5f5`;
+});
+
+document.getElementById('nav-skills').addEventListener('mouseenter', (e) => {
+  const { left, width } = e.target.getBoundingClientRect();
+  const containerLeft = e.target.parentElement.getBoundingClientRect().left;
+  document.getElementById('nav-skills').style.color = `#020202`;
+  hoverBg.style.width = `${width}px`;
+  hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
+  document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
+  document.getElementById('nav-projects').style.color = `#f5f5f5`;
+  document.getElementById('nav-contacts').style.color = `#f5f5f5`;
+});
+
+document.getElementById('nav-projects').addEventListener('mouseenter', (e) => {
+  const { left, width } = e.target.getBoundingClientRect();
+  const containerLeft = e.target.parentElement.getBoundingClientRect().left;
+  document.getElementById('nav-projects').style.color = `#020202`;
+  hoverBg.style.width = `${width}px`;
+  hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
+  document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
+  document.getElementById('nav-skills').style.color = `#f5f5f5`;
+  document.getElementById('nav-contacts').style.color = `#f5f5f5`;
+});
+
+document.getElementById('nav-contacts').addEventListener('mouseenter', (e) => {
+  const { left, width } = e.target.getBoundingClientRect();
+  const containerLeft = e.target.parentElement.getBoundingClientRect().left;
+  document.getElementById('nav-contacts').style.color = `#020202`;
+  hoverBg.style.width = `${width}px`;
+  hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
+  document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
+  document.getElementById('nav-projects').style.color = `#f5f5f5`;
+  document.getElementById('nav-skills').style.color = `#f5f5f5`;
+});
