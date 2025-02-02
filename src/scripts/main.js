@@ -11,7 +11,6 @@ headers.forEach(header => {
     const isOpen = content.classList.contains('open');
 
 
-
     document.querySelectorAll('.skills-part-content').forEach(item => {
       content.style.opacity = 0;
       item.classList.remove('open');
@@ -26,6 +25,8 @@ headers.forEach(header => {
     if (!isOpen) {
       function firstTask() {
         return new Promise((resolve) => {
+          header.parentElement.style.backgroundColor = `#020202`;
+          header.parentElement.style.color = `#f5f5f5`;
           content.classList.add('open');
           content.style.maxHeight = content.scrollHeight + 'px';
           icon.classList.add('rotate');
@@ -34,13 +35,33 @@ headers.forEach(header => {
       }
 
       async function runTasks() {
-        await firstTask(); // Ждем завершения первой задачи
+        await firstTask();
 
         setTimeout(() => {
           content.style.opacity = 1;
         }, 500);
       }
       runTasks();
+    }
+  });
+});
+
+document.querySelectorAll(".skills-part").forEach(header => {
+  header.addEventListener('mouseenter', () => {
+    const content = header.querySelector('.skills-part-header').nextElementSibling;
+    const isOpen = content.classList.contains('open');
+    if (!isOpen) {
+      header.style.backgroundColor = `#f5f5f5`;
+      header.style.color = `#020202`;
+    }
+  });
+
+  header.addEventListener('mouseleave', () => {
+    const content = header.querySelector('.skills-part-header').nextElementSibling;
+    const isOpen = content.classList.contains('open');
+    if (!isOpen) {
+      header.style.backgroundColor = `#020202`;
+      header.style.color = document.getElementsByClassName('skills-title')[0].style.color;
     }
   });
 });
@@ -88,4 +109,3 @@ document.getElementById('island-logo').addEventListener('click', () => {
   });
 
 });
-
