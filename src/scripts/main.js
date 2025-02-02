@@ -110,5 +110,23 @@ document.getElementById('island-logo').addEventListener('click', () => {
     top: 0,
     behavior: "smooth"
   });
-
 });
+
+
+const buttons = document.querySelectorAll(".nav");
+  const hoverBg = document.querySelector(".hover-bg");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("mouseenter", (e) => {
+      const { left, width } = e.target.getBoundingClientRect();
+      const containerLeft = e.target.parentElement.getBoundingClientRect().left;
+      btn.style.color = `#020202`;
+      hoverBg.style.width = `${width}px`;
+      hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
+    });
+    btn.addEventListener("mouseleave", (e) => {
+      const { left, width } = e.target.getBoundingClientRect();
+      const containerLeft = e.target.parentElement.getBoundingClientRect().left;
+      btn.style.color = `#f5f5f5`;
+    });
+  });
