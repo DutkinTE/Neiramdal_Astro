@@ -6,6 +6,7 @@ import WhoEnd from "../components/who-end.astro";
 import SkillsContent from "../components/skills-content.astro";
 import Footer from "../components/footer.astro";
 import MainIsland from "../components/main-island.astro";
+import MainOrder from "../components/main-order.astro";
 import "../styles/global.css";
 ---
 
@@ -53,7 +54,9 @@ import "../styles/global.css";
         <SkillsContent />
       </div>
       <div id="our-works"></div>
-      <div id="order"></div>
+      <div id="order">
+        <MainOrder/>
+      </div>
       <Footer />
     </div>
 
@@ -71,13 +74,17 @@ import "../styles/global.css";
 
 <style>
   #order {
-    height: 792px;
+    height: 1080px;
     width: 100%;
     padding-left: 70px;
     padding-right: 70px;
     background-color: #020202;
     position: relative;
     z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   #our-works {
