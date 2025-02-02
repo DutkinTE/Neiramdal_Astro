@@ -52,6 +52,7 @@ document.querySelectorAll(".skills-part").forEach(header => {
     const isOpen = content.classList.contains('open');
     if (!isOpen) {
       header.style.backgroundColor = `#f5f5f5`;
+      header.querySelector('.skills-part-icon').style.filter = `invert(1)`;
       header.style.color = `#020202`;
     }
   });
@@ -60,6 +61,7 @@ document.querySelectorAll(".skills-part").forEach(header => {
     const content = header.querySelector('.skills-part-header').nextElementSibling;
     const isOpen = content.classList.contains('open');
     if (!isOpen) {
+      header.querySelector('.skills-part-icon').style.filter = `none`;
       header.style.backgroundColor = `#020202`;
       header.style.color = document.getElementsByClassName('skills-title')[0].style.color;
     }
