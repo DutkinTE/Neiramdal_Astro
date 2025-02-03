@@ -6,7 +6,7 @@ function moveHoverBgToButton(button) {
   const containerLeft = button.parentElement.getBoundingClientRect().left;
 
   if (button == document.getElementById('nav-who-we-are')) {
-    document.getElementById('nav-who-we-are').style.color = `#020202`;
+    document.getElementById('nav-who-we-are').style.color = `#070707`;
     hoverBg.style.width = `${width}px`;
     hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
     document.getElementById('nav-skills').style.color = `#f5f5f5`;
@@ -15,7 +15,7 @@ function moveHoverBgToButton(button) {
   }
 
   else if (button == document.getElementById('nav-skills')) {
-    document.getElementById('nav-skills').style.color = `#020202`;
+    document.getElementById('nav-skills').style.color = `#070707`;
     hoverBg.style.width = `${width}px`;
     hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
     document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
@@ -24,7 +24,7 @@ function moveHoverBgToButton(button) {
   }
 
   else if (button == document.getElementById('nav-projects')) {
-    document.getElementById('nav-projects').style.color = `#020202`;
+    document.getElementById('nav-projects').style.color = `#070707`;
     hoverBg.style.width = `${width}px`;
     hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
     document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
@@ -33,7 +33,7 @@ function moveHoverBgToButton(button) {
   }
 
   else if (button == document.getElementById('nav-contacts')) {
-    document.getElementById('nav-contacts').style.color = `#020202`;
+    document.getElementById('nav-contacts').style.color = `#070707`;
     hoverBg.style.width = `${width}px`;
     hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
     document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;

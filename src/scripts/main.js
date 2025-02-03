@@ -25,7 +25,7 @@ headers.forEach(header => {
     if (!isOpen) {
       function firstTask() {
         return new Promise((resolve) => {
-          header.parentElement.style.backgroundColor = `#020202`;
+          header.parentElement.style.backgroundColor = `#070707`;
           header.parentElement.style.color = `#f5f5f5`;
           header.parentElement.querySelector('.skills-part-icon').style.filter = `none`;
           content.classList.add('open');
@@ -54,7 +54,7 @@ document.querySelectorAll(".skills-part").forEach(header => {
     if (!isOpen) {
       header.style.backgroundColor = `#f5f5f5`;
       header.querySelector('.skills-part-icon').style.filter = `invert(1)`;
-      header.style.color = `#020202`;
+      header.style.color = `#070707`;
     }
   });
 
@@ -63,7 +63,7 @@ document.querySelectorAll(".skills-part").forEach(header => {
     const isOpen = content.classList.contains('open');
     if (!isOpen) {
       header.querySelector('.skills-part-icon').style.filter = `none`;
-      header.style.backgroundColor = `#020202`;
+      header.style.backgroundColor = `#070707`;
       header.style.color = document.getElementsByClassName('skills-title')[0].style.color;
     }
   });
@@ -104,7 +104,7 @@ const hoverBg = document.querySelector(".hover-bg");
 document.getElementById('nav-who-we-are').addEventListener('mouseenter', (e) => {
   const { left, width } = e.target.getBoundingClientRect();
   const containerLeft = e.target.parentElement.getBoundingClientRect().left;
-  document.getElementById('nav-who-we-are').style.color = `#020202`;
+  document.getElementById('nav-who-we-are').style.color = `#070707`;
   hoverBg.style.width = `${width}px`;
   hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
   document.getElementById('nav-skills').style.color = `#f5f5f5`;
@@ -115,7 +115,7 @@ document.getElementById('nav-who-we-are').addEventListener('mouseenter', (e) => 
 document.getElementById('nav-skills').addEventListener('mouseenter', (e) => {
   const { left, width } = e.target.getBoundingClientRect();
   const containerLeft = e.target.parentElement.getBoundingClientRect().left;
-  document.getElementById('nav-skills').style.color = `#020202`;
+  document.getElementById('nav-skills').style.color = `#070707`;
   hoverBg.style.width = `${width}px`;
   hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
   document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
@@ -126,7 +126,7 @@ document.getElementById('nav-skills').addEventListener('mouseenter', (e) => {
 document.getElementById('nav-projects').addEventListener('mouseenter', (e) => {
   const { left, width } = e.target.getBoundingClientRect();
   const containerLeft = e.target.parentElement.getBoundingClientRect().left;
-  document.getElementById('nav-projects').style.color = `#020202`;
+  document.getElementById('nav-projects').style.color = `#070707`;
   hoverBg.style.width = `${width}px`;
   hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
   document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
@@ -137,7 +137,7 @@ document.getElementById('nav-projects').addEventListener('mouseenter', (e) => {
 document.getElementById('nav-contacts').addEventListener('mouseenter', (e) => {
   const { left, width } = e.target.getBoundingClientRect();
   const containerLeft = e.target.parentElement.getBoundingClientRect().left;
-  document.getElementById('nav-contacts').style.color = `#020202`;
+  document.getElementById('nav-contacts').style.color = `#070707`;
   hoverBg.style.width = `${width}px`;
   hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
   document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
