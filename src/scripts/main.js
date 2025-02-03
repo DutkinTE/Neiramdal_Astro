@@ -112,8 +112,7 @@ document.getElementById('island-logo').addEventListener('click', () => {
   });
 });
 
-const buttons = document.querySelectorAll(".nav");
-  const hoverBg = document.querySelector(".hover-bg");
+const hoverBg = document.querySelector(".hover-bg");
 
 
 document.getElementById('nav-who-we-are').addEventListener('mouseenter', (e) => {

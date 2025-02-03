@@ -1,14 +1,70 @@
 let lastScrollY = 0;
 let ticking = false;
+const hoverBg = document.querySelector(".hover-bg");
+function moveHoverBgToButton(button) {
+  const { left, width } = button.getBoundingClientRect();
+  const containerLeft = button.parentElement.getBoundingClientRect().left;
+
+  if (button == document.getElementById('nav-who-we-are')) {
+    document.getElementById('nav-who-we-are').style.color = `#020202`;
+    hoverBg.style.width = `${width}px`;
+    hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
+    document.getElementById('nav-skills').style.color = `#f5f5f5`;
+    document.getElementById('nav-projects').style.color = `#f5f5f5`;
+    document.getElementById('nav-contacts').style.color = `#f5f5f5`;
+  }
+
+  if (button == document.getElementById('nav-skills')) {
+    document.getElementById('nav-skills').style.color = `#020202`;
+    hoverBg.style.width = `${width}px`;
+    hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
+    document.getElementById('nav-who-we-ar').style.color = `#f5f5f5`;
+    document.getElementById('nav-projects').style.color = `#f5f5f5`;
+    document.getElementById('nav-contacts').style.color = `#f5f5f5`;
+  }
+
+  if (button == document.getElementById('nav-projects')) {
+    document.getElementById('nav-skills').style.color = `#020202`;
+    hoverBg.style.width = `${width}px`;
+    hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
+    document.getElementById('nav-who-we-ar').style.color = `#f5f5f5`;
+    document.getElementById('nav-skills').style.color = `#f5f5f5`;
+    document.getElementById('nav-contacts').style.color = `#f5f5f5`;
+  }
+
+  if (button == document.getElementById('nav-contacts')) {
+    document.getElementById('nav-skills').style.color = `#020202`;
+    hoverBg.style.width = `${width}px`;
+    hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
+    document.getElementById('nav-who-we-ar').style.color = `#f5f5f5`;
+    document.getElementById('nav-projects').style.color = `#f5f5f5`;
+    document.getElementById('nav-skills').style.color = `#f5f5f5`;
+  }
+
+}
 
 if (window.scrollY > 750) {
   document.getElementById('main-header').style.maxWidth = `1440px`;
 }
 
+
+
 function handleScroll() {
   const currentScrollY = window.scrollY;
 
   if (currentScrollY > lastScrollY) {
+    if (window.scrollY < 1940) {
+      moveHoverBgToButton(document.getElementById('nav-who-we-are'));
+    }
+
+    if (window.scrollY > 1940 && window.scrollY < document.getElementById('projects').offsetTop) {
+      moveHoverBgToButton(document.getElementById('nav-skills'));
+    }
+
+    if (window.scrollY > 1940 && window.scrollY < document.getElementById('projects').offsetTop) {
+      moveHoverBgToButton(document.getElementById('nav-skills'));
+    }
+
     if (currentScrollY < 700) {
       document.getElementById('main-header').style.maxWidth = `${window.innerWidth - ((window.innerWidth - 1440) / 700) * currentScrollY}px`;
     }
