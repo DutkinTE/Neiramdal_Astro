@@ -11,7 +11,7 @@ document.getElementById("nav-skills").addEventListener('click', () => {
 });
 
 document.getElementById("nav-projects").addEventListener('click', () => {
-    document.getElementById('projects').scrollIntoView({
+    document.getElementById('our-works').scrollIntoView({
         behavior: 'smooth'
     });
 });

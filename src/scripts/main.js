@@ -69,20 +69,6 @@ document.querySelectorAll(".skills-part").forEach(header => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const elements = document.querySelectorAll(".main-animation");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.5 });
-
-  elements.forEach(element => observer.observe(element));
-});
-
 document.getElementById('island').addEventListener('mouseenter', () => {
   if (document.getElementById('island').style.top == '-70px') {
     document.getElementById('island-logo').style.opacity = `1`;

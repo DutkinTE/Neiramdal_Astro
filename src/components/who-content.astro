@@ -1,12 +1,12 @@
 <div id="who-title">/Кто мы?</div>
-<div class="who-content1">
-  Neiramdal — команда молодых профессионалов. Мы <br> специализируемся на разработке
-  программного <br>обеспечения, кроссплатформенных приложений и <br> интеллектуальных
-  чат-ботов
+<div class="who-content1" id="animated-text">
+  <span>Neiramdal</span> <span>—</span> <span>команда</span> <span>молодых</span> <span>профессионалов.</span> <span>Мы</span> <br> <span>специализируемся</span> <span>на</span> <span>разработке</span>
+  <span>программного</span> <span>обеспечения,</span> <span>кроссплатформенных</span> <span>приложений</span> <span>и</span> <br> <span>интеллектуальных</span>
+  <span>чат-ботов</span>
 </div>
 <div class="who-content1">
-  Команда Neiramdal создаёт и внедряет инновационные <br> продукты, которые позволят
-  Вашему бизнесу всегда быть <br> на шаг впереди конкурентов!
+  <span>Команда</span> <span>Neiramdal</span> <span>создаёт</span> <span>и</span> <span>внедряет</span> <span>инновационные</span> <br> <span>продукты,</span> <span>которые</span> <span>позволят</span>
+  <span>Вашему</span> <span>бизнесу</span> <span>всегда</span> <span>быть</span> <br> <span>на</span> <span>шаг</span> <span>впереди</span> <span>конкурентов!</span>
 </div>
 
 <style>
@@ -24,5 +24,14 @@
     font-size: 20px;
     margin-bottom: 20px;
     line-height: 140%;
+  }
+
+  .who-content1 span {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .who-content1 span.visible {
+    opacity: 1;
   }
 </style>

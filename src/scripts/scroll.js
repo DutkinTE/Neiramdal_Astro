@@ -51,6 +51,15 @@ if (window.scrollY > 750) {
 
 function handleScroll() {
   const currentScrollY = window.scrollY;
+  const whoContent = document.querySelectorAll('.who-content1 span');
+  const whoContentOffsetTop = document.getElementById('who-title').offsetTop;
+
+  whoContent.forEach((span, index) => {
+    if (currentScrollY > whoContentOffsetTop - window.innerHeight + (index * 20)) {
+      span.classList.add('visible');
+    }
+  });
+
   // прокрутка вниз
   if (currentScrollY > lastScrollY) {
     // if (window.scrollY < 1940) {
@@ -93,7 +102,7 @@ function handleScroll() {
     }
 
     document.getElementById('island').style.opacity = `${0.01 * (currentScrollY - 700)}`;
-    
+
 
     if (currentScrollY > document.getElementById('who').offsetTop) {
       document.getElementById('island-logo').style.opacity = `1`;
@@ -109,20 +118,6 @@ function handleScroll() {
 }
 
 
-function animation(selector) {
-  const elements = document.querySelectorAll(selector);
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, { threshold: 0.5 });
-
-  elements.forEach(element => observer.observe(element));
-}
-
 window.addEventListener('scroll', () => {
   if (!ticking) {
     requestAnimationFrame(handleScroll);
@@ -130,3 +125,4 @@ window.addEventListener('scroll', () => {
   }
 
 });
+

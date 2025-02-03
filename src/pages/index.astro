@@ -29,14 +29,7 @@ import "../styles/global.css";
     <main id="main">
       <MainHeader />
       <div class="container">
-        <video
-          autoplay
-          muted
-          loop
-          class="main-animation"
-          id="background-video"
-          height="700px"
-        >
+        <video autoplay muted loop id="background-video" height="700px">
           <source src="assets/videos/intro.mp4" type="video/mp4" />
         </video>
         <MainContent />
@@ -44,18 +37,22 @@ import "../styles/global.css";
     </main>
     <canvas id="who-canvas"></canvas>
     <div id="who">
-      <div class="container who-content-animation" id="who-content">
+      <div class="container" id="who-content">
         <WhoContent />
       </div>
-      <div id="who-end" class="who-end-animation">
+      <div id="who-end">
         <WhoEnd />
       </div>
       <div id="skills">
         <SkillsContent />
       </div>
-      <div id="our-works"></div>
+      <div id="our-works">
+        <video autoplay muted loop id="background-video2" height="700px">
+          <source src="assets/videos/intro.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div id="order">
-        <MainOrder/>
+        <MainOrder />
       </div>
       <Footer />
     </div>
@@ -80,7 +77,7 @@ import "../styles/global.css";
     padding-right: 70px;
     background-color: #020202;
     position: relative;
-    z-index: 4;
+    z-index: 5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,13 +85,17 @@ import "../styles/global.css";
   }
 
   #our-works {
-    position: relative;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 965px;
     background-color: #070707;
     width: 100%;
+    top: 0;
     padding-left: 70px;
     padding-right: 70px;
-    z-index: 3;
+    z-index: 4;
   }
   #skills {
     max-width: 1440px;
