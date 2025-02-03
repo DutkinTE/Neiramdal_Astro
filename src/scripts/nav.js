@@ -17,7 +17,7 @@ document.getElementById("nav-projects").addEventListener('click', () => {
 });
 
 document.getElementById("nav-contacts").addEventListener('click', () => {
-    document.getElementById('footer').scrollIntoView({
+    document.getElementById('order').scrollIntoView({
         behavior: 'smooth'
     });
 });

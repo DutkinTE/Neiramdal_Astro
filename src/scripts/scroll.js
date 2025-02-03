@@ -24,7 +24,7 @@ function moveHoverBgToButton(button) {
   }
 
   else if (button == document.getElementById('nav-projects')) {
-    document.getElementById('nav-skills').style.color = `#020202`;
+    document.getElementById('nav-projects').style.color = `#020202`;
     hoverBg.style.width = `${width}px`;
     hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
     document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
@@ -33,7 +33,7 @@ function moveHoverBgToButton(button) {
   }
 
   else if (button == document.getElementById('nav-contacts')) {
-    document.getElementById('nav-skills').style.color = `#020202`;
+    document.getElementById('nav-contacts').style.color = `#020202`;
     hoverBg.style.width = `${width}px`;
     hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
     document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
@@ -62,18 +62,7 @@ function handleScroll() {
 
   // прокрутка вниз
   if (currentScrollY > lastScrollY) {
-    // if (window.scrollY < 1940) {
-    //   moveHoverBgToButton(document.getElementById('nav-who-we-are'));
-    // }
-
-    // if (window.scrollY > 1940 && window.scrollY < document.getElementById('projects').offsetTop) {
-    //   moveHoverBgToButton(document.getElementById('nav-skills'));
-    // }
-
-    // if (window.scrollY > 1940 && window.scrollY < document.getElementById('projects').offsetTop) {
-    //   moveHoverBgToButton(document.getElementById('nav-skills'));
-    // }
-
+    // island 
     if (currentScrollY < 700) {
       document.getElementById('main-header').style.maxWidth = `${window.innerWidth - ((window.innerWidth - 1440) / 700) * currentScrollY}px`;
     }
@@ -91,9 +80,24 @@ function handleScroll() {
       document.getElementById('island').style.borderBottom = `0.1px solid #f5f5f5`;
     }
 
+    // nav
+    if (currentScrollY > document.getElementById('who').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('skills').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-who-we-are'));
+    }
+    else if (currentScrollY > document.getElementById('skills').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('our-works').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-skills'));
+    }
+    else if (currentScrollY > document.getElementById('our-works').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-projects'));
+    }
+    else if (currentScrollY > document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-contacts'));
+    }
+
   }
   // прокрутка вверх
   else if (currentScrollY < lastScrollY) {
+    // island
     if (currentScrollY < 700) {
       document.getElementById('main-header').style.maxWidth = `${window.innerWidth - ((window.innerWidth - 1440) / 700) * currentScrollY}px`;
       document.getElementById('main-header').style.opacity = `${1 - (0.01 * (currentScrollY - 700))}`;
@@ -103,12 +107,26 @@ function handleScroll() {
 
     document.getElementById('island').style.opacity = `${0.01 * (currentScrollY - 700)}`;
 
-
-    if (currentScrollY > document.getElementById('who').offsetTop) {
+    if (currentScrollY > document.getElementById('who').getBoundingClientRect().top + currentScrollY) {
       document.getElementById('island-logo').style.opacity = `1`;
       document.getElementById('island').style.top = `30px`;
       document.getElementById('island').style.borderBottom = `none`;
     }
+
+    // nav
+    if (currentScrollY > document.getElementById('who').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('skills').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-who-we-are'));
+    }
+    else if (currentScrollY > document.getElementById('skills').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('our-works').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-skills'));
+    }
+    else if (currentScrollY > document.getElementById('our-works').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-projects'));
+    }
+    else if (currentScrollY > document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-contacts'));
+    }
+
 
 
   }
