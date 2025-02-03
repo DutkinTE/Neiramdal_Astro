@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   elements.forEach(element => observer.observe(element));
 });
 
-document.getElementById('island-hover').addEventListener('mouseenter', () => {
+document.getElementById('island').addEventListener('mouseenter', () => {
   if (document.getElementById('island').style.top == '-70px') {
     document.getElementById('island-logo').style.opacity = `1`;
     document.getElementById('island').style.top = `30px`;
@@ -91,7 +91,7 @@ document.getElementById('island-hover').addEventListener('mouseenter', () => {
   }
 });
 
-document.getElementById('island-hover').addEventListener('mouseleave', (e) => {
+document.getElementById('island').addEventListener('mouseleave', (e) => {
   const { clientX, clientY } = e;
   if (document.getElementById('island').style.top == '30px') {
     if (clientY > 110) {
