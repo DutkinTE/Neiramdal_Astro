@@ -1,5 +1,5 @@
 ---
-import WorksHeader from "../components/works/works-header.astro";
+import OrderHeader from "../components/order/order-header.astro";
 import "../styles/global.css";
 ---
 
@@ -15,11 +15,11 @@ import "../styles/global.css";
       href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <title>Работы</title>
+    <title>Заказать</title>
   </head>
   <body>
-    <main id="works">
-      <WorksHeader />
+    <main id="order">
+      <OrderHeader />
       <div class="container">
         <div class="center">
           <video autoplay muted loop height="700px">
@@ -35,7 +35,7 @@ import "../styles/global.css";
 </html>
 
 <style>
-  #works {
+  #order {
     width: calc(100% - 140px);
     height: 750px;
     min-height: 630px;
