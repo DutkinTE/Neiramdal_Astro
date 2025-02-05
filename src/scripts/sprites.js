@@ -10,4 +10,4 @@ function animateSprite() {
     sprite.src = frames[frameIndex]; // Меняем изображение
 }
 
-setInterval(animateSprite, 33); // Обновляем каждые 200 мс
+setInterval(animateSprite, 200); // Обновляем каждые 200 мс
