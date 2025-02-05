@@ -35,7 +35,7 @@ requestAnimationFrame(() => {
             const model = gltf.scene;
 
             // Увеличиваем модель в 2 раза
-            model.scale.set(4, 4, 4);  // Масштаб по осям X, Y и Z
+            model.scale.set(2, 2, 2);  // Масштаб по осям X, Y и Z
             model.position.set(0, -2, 0); // Устанавливаем позицию модели в центре сцены
 
             scene.add(model);
@@ -46,8 +46,8 @@ requestAnimationFrame(() => {
                 const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
       
                 // Вычисляем углы для поворота модели по горизонтали (ось Y) и вертикали (ось X)
-                const rotationX = -mouseY * Math.PI / 6;  // Ограничиваем вертикальный угол, умножив на Math.PI / 6 (30 градусов)
-                const rotationY = mouseX * Math.PI / 3;  // Угол по горизонтали для вращения
+                const rotationX = -mouseY * Math.PI / 2;  // Ограничиваем вертикальный угол, умножив на Math.PI / 6 (30 градусов)
+                const rotationY = mouseX * Math.PI / 2;  // Угол по горизонтали для вращения
       
                 // Применяем вращение к модели
                 model.rotation.x = rotationX;  // Вертикальное вращение
