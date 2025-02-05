@@ -1,7 +1,7 @@
 const sprite = document.getElementById("sprite");
 var frames = []; // Файлы кадров
 for (var i = 1; i <= 180; i++) {
-    frames.push(`/assets/images/animation/hackmeetup30${i.toString().padStart(3, '0')}.png`);
+    frames.push(`assets/images/animation/hackmeetup30${i.toString().padStart(3, '0')}.png`);
 }
 let frameIndex = 0;
 
