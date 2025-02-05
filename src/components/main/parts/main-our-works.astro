@@ -1,33 +1,17 @@
 ---
-import Carousel from "../components/carousel.astro"
+import Carousel from "../components/carousel.astro";
 ---
+
 <div class="our-works">
-    <div class="our-works-title">
-        Наши работы
-    </div>
-    <Carousel/>
-    <div id="works-slider">
-        <div id="one-work" class="works-cards">
-            
-        </div>
-        <div id="two-work" class="works-cards">
-
-        </div>
-        <div id="three-work" class="works-cards">
-            
-        </div>
-        <div id="four-work" class="works-cards">
-            
-        </div>
-        <div id="five-work" class="works-cards">
-            
-        </div>
-    </div>
-
+  <div class="our-works-title">Наши работы</div>
+  <Carousel />
 </div>
 
 <style>
-    .our-works-title {
-        font-size: 40px;
-    }
+  .our-works-title {
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 </style>

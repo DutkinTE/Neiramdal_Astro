@@ -1,61 +1,100 @@
-<div class="carousel">
-  <button id="prevBtn" class="carousel-btn">&#10094;</button>
-  <div class="carousel-track">
-    <div class="carousel-item">1</div>
-    <div class="carousel-item">2</div>
-    <div class="carousel-item">3</div>
-    <div class="carousel-item">4</div>
-    <div class="carousel-item">5</div>
+<div class="carousel-container">
+  <div class="carousel-track" id="carousel">
+    <div class="carousel-item">
+      <img src="/assets/images/logo.svg" alt="Работа 1" />
+      <button class="more_buttons">Узнать больше</button>
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/images/logo.svg" alt="Работа 2" />
+      <button class="more_buttons">Узнать больше</button>
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/images/logo.svg" alt="Работа 3" />
+      <button class="more_buttons">Узнать больше</button>
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/images/logo.svg" alt="Работа 4" />
+      <button class="more_buttons">Узнать больше</button>
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/images/logo.svg" alt="Работа 5" />
+      <button class="more_buttons">Узнать больше</button>
+    </div>
   </div>
-  <button id="nextBtn" class="carousel-btn">&#10095;</button>
 </div>
-
+<div class="carousel-controls">
+  <button id="prev" class="arrow_buttons"
+    ><img src="/assets/images/Arrow 1.svg" width="36px" /></button
+  >
+  <div class="progress-bar"><div id="progress" class="progress"></div></div>
+  <button id="next" class="arrow_buttons"
+    ><img src="/assets/images/Arrow 2.svg" width="36px" /></button
+  >
+</div>
 <script>
-  import "../../../scripts/carousel.js";
+  import "../../../scripts/carousel";
 </script>
 
 <style>
-  .carousel {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
+  .carousel-container {
     overflow: hidden;
   }
-
   .carousel-track {
     display: flex;
     transition: transform 0.3s ease-in-out;
   }
-
   .carousel-item {
     min-width: 100%;
-    padding: 40px;
     text-align: center;
-    font-size: 24px;
-    background: #3498db;
-    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  .carousel-item img {
+    background-color: brown;
+    height: 300px;
+    width: 300px;
+    max-width: 100%;
     border-radius: 10px;
-    margin-right: 10px;
+    margin-top: 100px;
+    margin-bottom: 27px;
   }
-
-  .carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    font-size: 24px;
-    border-radius: 50%;
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
   }
-
-  #prevBtn {
-    left: 10px;
+  .progress-bar {
+    width: 50%;
+    height: 5px;
+    background: #5b5b5b;
+    border-radius: 20px;
+    position: relative;
+    margin: 0 24px;
   }
-
-  #nextBtn {
-    right: 10px;
+  .progress {
+    height: 5px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    width: 0%;
+    transition: width 0.3s;
+  }
+  .more_buttons {
+    height: 50px;
+    width: 300px;
+    background: none;
+    font-size: 16px;
+    border: 1px solid #f5f5f5;
+    color: #f5f5f5;
+    border-radius: 20px;
+  }
+  .arrow_buttons {
+    height: 32px;
+    width: 64px;
+    background: none;
+    font-size: 16px;
+    border: 1px solid #f5f5f5;
+    color: #f5f5f5;
+    border-radius: 20px;
   }
 </style>

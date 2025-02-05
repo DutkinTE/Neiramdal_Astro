@@ -30,7 +30,9 @@ import "../styles/global.css";
     <main id="main">
       <MainHeader />
       <div class="container">
-        <img id="sprite" src="/assets/images/animation/hackmeetup30001.png" alt="Sprite" />
+        <video id="background-video" autoplay muted loop>
+          <source src="/assets/videos/intro.mp4" />
+        </video>
 
         <MainContent />
       </div>
@@ -56,12 +58,12 @@ import "../styles/global.css";
       <Footer />
     </div>
     <script>
-      import "../scripts/sprites.js";
       import "../scripts/main.js";
       import "../scripts/cursor.js";
       import "../scripts/canvas.js";
       import "../scripts/scroll.js";
       import "../scripts/nav.js";
+      import "../scripts/video-move.js";
       import "../scripts/blackout.js";
       import "../scripts/three.js";
     </script>
@@ -95,13 +97,11 @@ import "../styles/global.css";
 
   #our-works {
     position: sticky;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 965px;
     background-color: #0a0a0a;
     width: 100%;
     top: 0;
+    padding-top: 170px;
     padding-left: 70px;
     padding-right: 70px;
     z-index: 4;
@@ -147,14 +147,14 @@ import "../styles/global.css";
     opacity: 0;
   }
 
-  #sprite {
-    height: 700px;
-    width: 700px;
+  #background-video {
     position: absolute;
     bottom: -200px;
     right: 0px;
     object-fit: cover;
     z-index: -1;
+    transition: all 0.5s;
+    height: 700px;
   }
 
   #who {

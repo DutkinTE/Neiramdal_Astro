@@ -1,45 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const track = document.querySelector(".carousel-track");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
+    const carousel = document.getElementById("carousel");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+    const progressBar = document.getElementById("progress");
+    const items = document.querySelectorAll(".carousel-item");
+    const totalItems = items.length;
+    let currentIndex = 0;
+    let startX = 0;
+    let isDragging = false;
 
-    let index = 0;
-
-    function updateCarousel() {
-        const itemWidth = document.querySelector(".carousel-item").offsetWidth;
-        track.style.transform = `translateX(-${index * itemWidth}px)`;
-    }
+    const updateCarousel = () => {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        progressBar.style.width = `${((currentIndex + 1) / totalItems) * 100}%`;
+    };
 
     nextBtn.addEventListener("click", () => {
-        if (index < track.children.length - 1) {
-            index++;
-            updateCarousel();
-        }
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
     });
 
     prevBtn.addEventListener("click", () => {
-        if (index > 0) {
-            index--;
-            updateCarousel();
-        }
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
     });
 
-    // Поддержка свайпа на мобильных
-    let startX = 0;
-
-    track.addEventListener("touchstart", (e) => {
+    carousel.addEventListener("touchstart", (e) => {
         startX = e.touches[0].clientX;
+        isDragging = true;
     });
 
-    track.addEventListener("touchend", (e) => {
-        let endX = e.changedTouches[0].clientX;
-        if (startX - endX > 50) {
-            nextBtn.click(); // Листаем вперёд
-        } else if (endX - startX > 50) {
-            prevBtn.click(); // Листаем назад
+    carousel.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        let diff = startX - e.touches[0].clientX;
+        if (diff > 50) {
+            currentIndex = (currentIndex + 1) % totalItems;
+            isDragging = false;
+        } else if (diff < -50) {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            isDragging = false;
         }
+        updateCarousel();
     });
 
-    // Обновляем при изменении размера окна
-    window.addEventListener("resize", updateCarousel);
+    carousel.addEventListener("touchend", () => {
+        isDragging = false;
+    });
+
+    updateCarousel();
 });
