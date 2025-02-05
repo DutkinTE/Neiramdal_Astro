@@ -29,7 +29,7 @@ requestAnimationFrame(() => {
 
     const loader = new GLTFLoader();
     loader.load(
-        "/models/NeiramdalRoboRabbit.glb", // Путь к модели
+        "/public/models/NeiramdalRoboRabbit.glb", // Путь к модели
         (gltf) => {
             console.log("✅ Модель загружена!", gltf);
             const model = gltf.scene;
