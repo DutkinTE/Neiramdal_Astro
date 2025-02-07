@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let isDragging = false;
 
     const updateCarousel = () => {
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        carousel.style.transform = `translateX(${-(currentIndex) * 375 + (carousel.offsetWidth / 2 - 150)}px)`;
         progressBar.style.width = `${((currentIndex + 1) / totalItems) * 100}%`;
     };
 
@@ -48,3 +49,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCarousel();
 });
+
+// x 
