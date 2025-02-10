@@ -87,11 +87,11 @@ function handleScroll() {
     else if (currentScrollY > document.getElementById('skills').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('our-works').getBoundingClientRect().top + window.scrollY) {
       moveHoverBgToButton(document.getElementById('nav-skills'));
     }
-    else if (currentScrollY > document.getElementById('our-works').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
-      moveHoverBgToButton(document.getElementById('nav-projects'));
-    }
     else if (currentScrollY > document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
       moveHoverBgToButton(document.getElementById('nav-contacts'));
+    }
+    else {
+      moveHoverBgToButton(document.getElementById('nav-projects'));
     }
 
   }
@@ -120,11 +120,11 @@ function handleScroll() {
     else if (currentScrollY > document.getElementById('skills').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('our-works').getBoundingClientRect().top + window.scrollY) {
       moveHoverBgToButton(document.getElementById('nav-skills'));
     }
-    else if (currentScrollY > document.getElementById('our-works').getBoundingClientRect().top + window.scrollY && currentScrollY < document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
-      moveHoverBgToButton(document.getElementById('nav-projects'));
-    }
     else if (currentScrollY > document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
       moveHoverBgToButton(document.getElementById('nav-contacts'));
+    }
+    else {
+      moveHoverBgToButton(document.getElementById('nav-projects'));
     }
 
 
@@ -143,4 +143,5 @@ window.addEventListener('scroll', () => {
   }
 
 });
+
 

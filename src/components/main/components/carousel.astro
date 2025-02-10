@@ -23,13 +23,18 @@
   </div>
 </div>
 <div class="carousel-controls">
-  <button id="prev" class="arrow_buttons"
-    ><img src="/assets/images/Arrow 1.svg" width="36px" /></button
-  >
+  <button id="prev" class="arrow_buttons">
+    <div class="svg_wrapper">
+      <img src="/assets/images/Arrow 1.svg" width="36px" />
+    </div>
+  </button>
   <div class="progress-bar"><div id="progress" class="progress"></div></div>
-  <button id="next" class="arrow_buttons"
-    ><img src="/assets/images/Arrow 2.svg" width="36px" /></button
-  >
+  <button id="next" class="arrow_buttons">
+    <div class="svg_wrapper">
+      <img src="/assets/images/Arrow 2.svg" width="36px" />
+    </div>
+    
+  </button>
 </div>
 <script>
   import "../../../scripts/carousel";
@@ -52,7 +57,6 @@
     flex-direction: column;
   }
   .carousel-item img {
-    background-color: brown;
     height: 300px;
     width: 300px;
     max-width: 100%;
@@ -64,7 +68,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .progress-bar {
     width: 50%;
@@ -74,6 +78,7 @@
     position: relative;
     margin: 0 24px;
   }
+
   .progress {
     height: 5px;
     border-radius: 20px;
@@ -81,6 +86,7 @@
     width: 0%;
     transition: width 0.3s;
   }
+
   .more_buttons {
     height: 50px;
     width: 300px;
@@ -89,7 +95,40 @@
     border: 1px solid #f5f5f5;
     color: #f5f5f5;
     border-radius: 20px;
+    overflow: hidden;
+    font-family: "Play", serif;
+    position: relative;
   }
+
+  .more_buttons::after {
+    content: "";
+    position: absolute;
+    bottom: -400px;
+    left: -46px;
+    width: 400px;
+    height: 400px;
+    background-color: #f5f5f5;
+    border-radius: 100%;
+    overflow: hidden;
+    transition: all 0.7s;
+    z-index: -1;
+  }
+
+  .more_buttons:hover::after {
+    bottom: -260px;
+  }
+
+  .more_buttons:hover {
+    cursor: none;
+    color: #050505;
+    border-color: #050505;
+  }
+
+  .more_buttons:active {
+    color: #7855ed;
+    border: 1px solid #7855ed;
+  }
+
   .arrow_buttons {
     height: 32px;
     width: 64px;
@@ -98,9 +137,48 @@
     border: 1px solid #f5f5f5;
     color: #f5f5f5;
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .arrow_buttons::after {
+    content: "";
+    position: absolute;
+    bottom: -202px;
+    left: -65px;
+    width: 200px;
+    height: 200px;
+    background-color: #f5f5f5;
+    border-radius: 100%;
+    overflow: hidden;
+    transition: all 0.7s;
+    z-index: -1;
+  }
+
+  .arrow_buttons:hover::after {
+    bottom: -160px;
+  }
+
+  .svg_wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .arrow_buttons:hover .svg_wrapper {
+    mix-blend-mode: difference;
   }
 
   .arrow_buttons:hover {
+    cursor: none;
+    color: #050505;
+    border-color: #050505;
+  }
 
+  .arrow_buttons:active {
+    color: #7855ed;
+    border: 1px solid #7855ed;
   }
 </style>

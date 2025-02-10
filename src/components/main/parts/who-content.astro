@@ -1,37 +1,79 @@
-<div id="who-title">/Кто мы?</div>
-<div class="who-content1" id="animated-text">
-  <span>Neiramdal</span> <span>—</span> <span>команда</span> <span>молодых</span> <span>профессионалов.</span> <span>Мы</span> <br> <span>специализируемся</span> <span>на</span> <span>разработке</span>
-  <span>программного</span> <span>обеспечения,</span> <span>кроссплатформенных</span> <span>приложений</span> <span>и</span> <br> <span>интеллектуальных</span>
-  <span>чат-ботов</span>
+<div id="who-title" class="reveal-type">/Кто мы?</div>
+
+<p class="reveal-type">
+  Neiramdal — команда молодых профессионалов. Мы<br />специализируемся на
+  разработке программного<br />обеспечения, кроссплатформенных приложений и<br
+  />интеллектуальных чат-ботов.
+</p>
+<div class="who-content1 reveal-type">
+  Команда Neiramdal создаёт и внедряет инновационные<br />продукты, которые
+  позволят Вашему бизнесу всегда быть<br />на шаг впереди конкурентов!
 </div>
-<div class="who-content1">
-  <span>Команда</span> <span>Neiramdal</span> <span>создаёт</span> <span>и</span> <span>внедряет</span> <span>инновационные</span> <br> <span>продукты,</span> <span>которые</span> <span>позволят</span>
-  <span>Вашему</span> <span>бизнесу</span> <span>всегда</span> <span>быть</span> <br> <span>на</span> <span>шаг</span> <span>впереди</span> <span>конкурентов!</span>
-</div>
+
+<script>
+  import Lenis from "lenis";
+
+  import "lenis/dist/lenis.css";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import SplitType from "split-type";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const splitTypes = document.querySelectorAll(".reveal-type");
+
+  splitTypes.forEach((char, i) => {
+    const bg = "transparent";
+    const fg = "#f5f5f5";
+
+    const text = new SplitType(char as HTMLElement, { types: "chars" });
+
+    gsap.fromTo(
+      text.chars,
+      { color: bg },
+      {
+        color: fg,
+        duration: 0.3,
+        stagger: 0.02,
+        scrollTrigger: {
+          trigger: char,
+          start: "top 77%",
+          end: "top 50%",
+          scrub: true,
+          markers: false,
+          onLeaveBack: () => gsap.to(text.chars, { color: bg, duration: 0.3 }),
+        },
+      }
+    );
+  });
+
+  const lenis = new Lenis();
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
 
 <style>
   #who-title {
-    color: #5B5B5B;
-    transition: color 1s ;
     font-size: 36px;
     font-weight: 500;
     margin-bottom: 40px;
   }
 
   .who-content1 {
-    color: #5B5B5B;
-    transition: color 1.5s;
     font-size: 20px;
     margin-bottom: 20px;
     line-height: 140%;
   }
 
-  .who-content1 span {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-
-  .who-content1 span.visible {
-    opacity: 1;
+  p {
+    color: transparent;
+    transition: color 1.5s;
+    font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 140%;
   }
 </style>

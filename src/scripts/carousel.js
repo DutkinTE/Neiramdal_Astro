@@ -16,13 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     nextBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
+        if (currentIndex < totalItems - 1) {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }
     });
 
     prevBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        updateCarousel();
+        if (currentIndex > 0) {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        }
+
     });
 
     carousel.addEventListener("touchstart", (e) => {
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             currentIndex = (currentIndex - 1 + totalItems) % totalItems;
             isDragging = false;
         }
-        updateCarousel();
+        updateCarousel(); й
     });
 
     carousel.addEventListener("touchend", () => {
@@ -50,4 +55,3 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCarousel();
 });
 
-// x 
