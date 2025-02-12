@@ -48,3 +48,26 @@ document.querySelectorAll('.hover').forEach(element => {
     cursorInner.style.height = `8px`;
   });
 });
+
+
+const dragCursor = document.createElement('div');
+dragCursor.classList.add('drag-cursor');
+document.body.appendChild(dragCursor);
+
+document.addEventListener('mousemove', (e) => {
+  const { clientX, clientY } = e;
+  
+  dragCursor.style.transform = `translate(${clientX - 55}px, ${clientY - 55}px)`;
+});
+
+document.getElementById('carousel').addEventListener('mouseenter', () => {
+  cursorOuter.style.opacity = 0;
+  cursorInner.style.opacity = 0;
+  dragCursor.style.opacity = 1;
+});
+
+document.getElementById('carousel').addEventListener('mouseleave', () => {
+  cursorOuter.style.opacity = 1;
+  cursorInner.style.opacity = 1;
+  dragCursor.style.opacity = 0;
+});

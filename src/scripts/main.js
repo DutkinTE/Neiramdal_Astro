@@ -54,7 +54,7 @@ document.querySelectorAll(".skills-part").forEach(header => {
     if (!isOpen) {
       header.style.backgroundColor = `#f5f5f5`;
       header.querySelector('.skills-part-icon').style.filter = `invert(1)`;
-      header.style.color = `#070707`;
+      header.style.color = `#040404`;
     }
   });
 
@@ -63,7 +63,7 @@ document.querySelectorAll(".skills-part").forEach(header => {
     const isOpen = content.classList.contains('open');
     if (!isOpen) {
       header.querySelector('.skills-part-icon').style.filter = `none`;
-      header.style.backgroundColor = `#070707`;
+      header.style.backgroundColor = `#040404`;
       header.style.color = '#f5f5f5';
     }
   });
