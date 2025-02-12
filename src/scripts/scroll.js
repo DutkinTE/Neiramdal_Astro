@@ -92,6 +92,9 @@ function handleScroll() {
     else if (currentScrollY > document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
       moveHoverBgToButton(document.getElementById('nav-contacts'));
     }
+    else if (currentScrollY < document.getElementById('who').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-who-we-are'));
+    }
     else {
       moveHoverBgToButton(document.getElementById('nav-projects'));
     }
@@ -124,6 +127,9 @@ function handleScroll() {
     }
     else if (currentScrollY > document.getElementById('order').getBoundingClientRect().top + window.scrollY) {
       moveHoverBgToButton(document.getElementById('nav-contacts'));
+    }
+    else if (currentScrollY < document.getElementById('who').getBoundingClientRect().top + window.scrollY) {
+      moveHoverBgToButton(document.getElementById('nav-who-we-are'));
     }
     else {
       moveHoverBgToButton(document.getElementById('nav-projects'));
