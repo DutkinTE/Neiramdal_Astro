@@ -5,14 +5,24 @@ cursorInner.classList.add('cursor-inner');
 document.body.appendChild(cursorOuter);
 document.body.appendChild(cursorInner);
 
+document.querySelectorAll('.hover').forEach(element => {
+  element.addEventListener('mouseenter', (e) => {
+    cursorInner.style.width = `4px`;
+    cursorInner.style.height = `4px`;
+    cursorInner.style.transform = `translate(${clientX - 2}px, ${clientY - 2}px)`;
+  });
+
+  element.addEventListener('mouseleave', () => {
+    cursorInner.style.width = `8px`;
+    cursorInner.style.height = `8px`;
+  });
+});
+
 document.addEventListener('mousemove', (e) => {
   const { clientX, clientY } = e;
-  
-  cursorOuter.style.width = `35px`;
-  cursorOuter.style.height = `35px`;
-  
+
   cursorOuter.style.transform = `translate(${clientX - 18.5}px, ${clientY - 18.5}px)`;
-  cursorInner.style.transform = `translate(${clientX - cursorInner.offsetWidth / 2}px, ${clientY - cursorInner.offsetHeight / 2}px)`;
+  cursorInner.style.transform = `translate(${clientX - cursorInner.offsetWidth / 2}px, ${clientY - cursorInner.offsetWidth / 2}px)`;
 });
 
 document.addEventListener('mousedown', (e) => {
@@ -22,7 +32,7 @@ document.addEventListener('mousedown', (e) => {
   cursorInner.style.height = `12px`;
   cursorInner.style.width = `12px`;
 
-  cursorOuter.style.transform = `translate(${clientX - 15.75}px, ${clientY - 15.75}px)`;
+  cursorOuter.style.transform = `translate(${clientX - 16}px, ${clientY - 16}px)`;
   cursorInner.style.transform = `translate(${clientX - 6}px, ${clientY - 6}px)`;
 });
 
@@ -37,27 +47,19 @@ document.addEventListener('mouseup', (e) => {
   cursorInner.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
 });
 
-document.querySelectorAll('.hover').forEach(element => {
-  element.addEventListener('mouseenter', () => {
-    cursorInner.style.width = `4px`;
-    cursorInner.style.height = `4px`;
-  });
-
-  element.addEventListener('mouseleave', () => {
-    cursorInner.style.width = `8px`;
-    cursorInner.style.height = `8px`;
-  });
-});
-
 
 const dragCursor = document.createElement('div');
+const cursorText = document.createElement('div');
+cursorText.classList.add('cursor-text');
+cursorText.textContent = 'Тянуть'; 
 dragCursor.classList.add('drag-cursor');
 document.body.appendChild(dragCursor);
+dragCursor.appendChild(cursorText);
 
 document.addEventListener('mousemove', (e) => {
   const { clientX, clientY } = e;
-  
-  dragCursor.style.transform = `translate(${clientX - 55}px, ${clientY - 55}px)`;
+
+  dragCursor.style.transform = `translate(${clientX - 85}px, ${clientY - 85}px)`;
 });
 
 document.getElementById('carousel').addEventListener('mouseenter', () => {
@@ -70,4 +72,21 @@ document.getElementById('carousel').addEventListener('mouseleave', () => {
   cursorOuter.style.opacity = 1;
   cursorInner.style.opacity = 1;
   dragCursor.style.opacity = 0;
+});
+
+document.getElementById('carousel').addEventListener('mousedown', () => {
+  
+});
+
+document.querySelectorAll('.more_buttons').forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    cursorOuter.style.opacity = 1;
+    cursorInner.style.opacity = 1;
+    dragCursor.style.opacity = 0;
+  });
+  item.addEventListener('mouseleave', () => {
+    cursorOuter.style.opacity = 0;
+    cursorInner.style.opacity = 0;
+    dragCursor.style.opacity = 1;
+  });
 });
