@@ -10,47 +10,36 @@ document.addEventListener("DOMContentLoaded", () => {
     let isDragging = false;
 
     const updateCarousel = () => {
-
         carousel.style.transform = `translateX(${-(currentIndex) * 375 + (carousel.offsetWidth / 2 - 150)}px)`;
         progressBar.style.width = `${((currentIndex + 1) / totalItems) * 100}%`;
     };
 
     nextBtn.addEventListener("click", () => {
         if (currentIndex < totalItems - 1) {
+            let button = document.getElementsByClassName("arrow_buttons")[0];
             currentIndex = (currentIndex + 1) % totalItems;
+            button.disabled = false;
             updateCarousel();
+        }
+        if (currentIndex == totalItems - 1) {
+            let button = document.getElementsByClassName("arrow_buttons")[1];
+            button.disabled = true;
         }
     });
 
     prevBtn.addEventListener("click", () => {
         if (currentIndex > 0) {
+            let button = document.getElementsByClassName("arrow_buttons")[1];
             currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            button.disabled = false;
             updateCarousel();
         }
-
-    });
-
-    carousel.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-    });
-
-    carousel.addEventListener("touchmove", (e) => {
-        if (!isDragging) return;
-        let diff = startX - e.touches[0].clientX;
-        if (diff > 50) {
-            currentIndex = (currentIndex + 1) % totalItems;
-            isDragging = false;
-        } else if (diff < -50) {
-            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-            isDragging = false;
+        if (currentIndex == 0) {
+            let button = document.getElementsByClassName("arrow_buttons")[0];
+            button.disabled = true;
         }
-        updateCarousel(); й
     });
 
-    carousel.addEventListener("touchend", () => {
-        isDragging = false;
-    });
 
     updateCarousel();
 });

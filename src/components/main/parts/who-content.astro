@@ -10,51 +10,7 @@
   позволят Вашему бизнесу всегда быть<br />на шаг впереди конкурентов!
 </div>
 
-<script>
-  import Lenis from "lenis";
 
-  import "lenis/dist/lenis.css";
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import SplitType from "split-type";
-  gsap.registerPlugin(ScrollTrigger);
-
-  const splitTypes = document.querySelectorAll(".reveal-type");
-
-  splitTypes.forEach((char, i) => {
-    const bg = "transparent";
-    const fg = "#f5f5f5";
-
-    const text = new SplitType(char as HTMLElement, { types: "chars" });
-
-    gsap.fromTo(
-      text.chars,
-      { color: bg },
-      {
-        color: fg,
-        duration: 0.3,
-        stagger: 0.02,
-        scrollTrigger: {
-          trigger: char,
-          start: "top 77%",
-          end: "top 50%",
-          scrub: true,
-          markers: false,
-          onLeaveBack: () => gsap.to(text.chars, { color: bg, duration: 0.3 }),
-        },
-      }
-    );
-  });
-
-  const lenis = new Lenis();
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
-</script>
 
 <style>
   #who-title {

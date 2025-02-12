@@ -29,15 +29,15 @@ import Carousel from "../components/carousel.astro";
       { color: bg },
       {
         color: fg,
-        duration: 0.3,
+        duration: 0.5,
         stagger: 0.02,
         scrollTrigger: {
           trigger: char,
-          start: "top 77%",
-          end: "top 50%",
+          start: "top 90%",
+          end: "top 70%",
           scrub: true,
           markers: false,
-          onLeaveBack: () => gsap.to(text.chars, { color: bg, duration: 0.3 }),
+          onLeaveBack: () => gsap.to(text.chars, { color: bg, duration: 0.5 }),
         },
       }
     );

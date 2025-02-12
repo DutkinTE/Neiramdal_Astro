@@ -64,7 +64,7 @@ document.querySelectorAll(".skills-part").forEach(header => {
     if (!isOpen) {
       header.querySelector('.skills-part-icon').style.filter = `none`;
       header.style.backgroundColor = `#070707`;
-      header.style.color = document.getElementsByClassName('skills-title')[0].style.color;
+      header.style.color = '#f5f5f5';
     }
   });
 });

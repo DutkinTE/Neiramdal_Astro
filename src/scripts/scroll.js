@@ -1,3 +1,5 @@
+
+
 let lastScrollY = 0;
 let ticking = false;
 const hoverBg = document.querySelector(".hover-bg");
