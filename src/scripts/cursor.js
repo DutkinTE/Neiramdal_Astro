@@ -74,8 +74,18 @@ document.getElementById('carousel').addEventListener('mouseleave', () => {
   dragCursor.style.opacity = 0;
 });
 
-document.getElementById('carousel').addEventListener('mousedown', () => {
-  
+document.getElementById('carousel').addEventListener('mousedown', (e) => {
+  const { clientX, clientY } = e;
+  dragCursor.style.width = `230px`;
+  dragCursor.style.height = `230px`;
+  dragCursor.style.transform = `translate(${clientX - 115}px, ${clientY - 115}px)`;
+});
+
+document.getElementById('carousel').addEventListener('mouseup', (e) => {
+  const { clientX, clientY } = e;
+  dragCursor.style.width = `170px`;
+  dragCursor.style.height = `170px`;
+  dragCursor.style.transform = `translate(${clientX - 85}px, ${clientY - 85}px)`;
 });
 
 document.querySelectorAll('.more_buttons').forEach(item => {

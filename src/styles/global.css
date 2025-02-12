@@ -2,6 +2,7 @@ body {
   background-color: #040404;
   font-family: "Play", serif;
   transition: opacity 0.3s;
+  cursor: none;
 }
 
 body::-webkit-scrollbar {
