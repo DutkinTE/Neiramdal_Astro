@@ -68,6 +68,13 @@ import "../styles/global.css";
       import "../scripts/three.js";
     </script>
   </body>
+  <script type="text/javascript">
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
+    console.log('success');
+    
+</script>
 </html>
 
 <style>
