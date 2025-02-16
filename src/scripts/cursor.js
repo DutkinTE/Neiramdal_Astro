@@ -7,6 +7,7 @@ document.body.appendChild(cursorInner);
 
 document.querySelectorAll('.hover').forEach(element => {
   element.addEventListener('mouseenter', (e) => {
+    const { clientX, clientY } = e;
     cursorInner.style.width = `4px`;
     cursorInner.style.height = `4px`;
     cursorInner.style.transform = `translate(${clientX - 2}px, ${clientY - 2}px)`;
@@ -68,13 +69,13 @@ document.addEventListener('mousemove', (e) => {
   dragCursor.style.transform = `translate(${clientX - 85}px, ${clientY - 85}px)`;
 });
 
-document.getElementById('carousel').addEventListener('mouseenter', () => {
+document.getElementById('carousel-container').addEventListener('mouseenter', () => {
   cursorOuter.style.opacity = 0;
   cursorInner.style.opacity = 0;
   dragCursor.style.opacity = 1;
 });
 
-document.getElementById('carousel').addEventListener('mouseleave', () => {
+document.getElementById('carousel-container').addEventListener('mouseleave', () => {
   cursorOuter.style.opacity = 1;
   cursorInner.style.opacity = 1;
   dragCursor.style.opacity = 0;

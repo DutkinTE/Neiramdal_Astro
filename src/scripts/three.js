@@ -39,7 +39,7 @@ requestAnimationFrame(() => {
       
                 // Вычисляем углы для поворота модели по горизонтали (ось Y) и вертикали (ось X)
                 const rotationX = -mouseY * Math.PI / 2;  // Ограничиваем вертикальный угол, умножив на Math.PI / 6 (30 градусов)
-                const rotationY = mouseX * Math.PI / 2;  // Угол по горизонтали для вращения
+                const rotationY = mouseX * Math.PI / 2.3;  // Угол по горизонтали для вращения
       
                 // Применяем вращение к модели
                 model.rotation.x = rotationX;  // Вертикальное вращение
