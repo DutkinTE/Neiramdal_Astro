@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isDragging) requestAnimationFrame(animation);
     };
 
-    carousel.addEventListener("mousedown", touchStart);
+    document.addEventListener("mousedown", touchStart);
     carousel.addEventListener("mousemove", touchMove);
     carousel.addEventListener("mouseup", touchEnd);
 
