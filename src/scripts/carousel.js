@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
         currentTranslate = -(currentIndex * 375) + (carousel.offsetWidth / 2 - 150);
         carousel.style.transform = `translateX(${currentTranslate}px)`;
         progressBar.style.width = `${((currentIndex + 1) / totalItems) * 100}%`;
+        for (let i = 0; i < totalItems; i++) {
+            if (i != currentIndex) {
+                items[i].style.filter = 'blur(5px)';
+            }
+            else {
+                items[i].style.filter = 'none';
+            }
+        }
     };
  
     nextBtn.addEventListener("click", () => {
