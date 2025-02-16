@@ -8,7 +8,7 @@
 <a href="/order">
   
 
-  <button class="button hover"> Оставить заявку </button>
+  <button class="button hover"> Контакты </button>
 </a>
 
 <style>
@@ -42,7 +42,8 @@
     transition:
       color 0.3s ease,
       border-color 0.3s,
-      border 0.3s ease;
+      border 0.3s ease,
+      transform 0.5s;
   }
 
   .button::after {
@@ -67,10 +68,12 @@
     cursor: none;
     color: #050505;
     border-color: #050505;
+    transform: scale(1.1);
   }
 
   .button:active {
     color: #7855ed;
     border: 1px solid #7855ed;
+    transform: scale(0.9);
   }
 </style>
