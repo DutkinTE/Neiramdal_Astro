@@ -19,12 +19,6 @@ requestAnimationFrame(() => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
 
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
-    directionalLight.position.set(5, 5, 5);
-    scene.add(directionalLight);
-
-
     const loader = new GLTFLoader();
     loader.load(
         "/assets/models/NeiramdalRoboRabbit.glb", // Путь к модели
