@@ -34,6 +34,9 @@ document.addEventListener('mousedown', (e) => {
 
   cursorOuter.style.transform = `translate(${clientX - 16}px, ${clientY - 16}px)`;
   cursorInner.style.transform = `translate(${clientX - 6}px, ${clientY - 6}px)`;
+  dragCursor.style.width = `230px`;
+  dragCursor.style.height = `230px`;
+  dragCursor.style.transform = `translate(${clientX - 115}px, ${clientY - 115}px)`;
 });
 
 document.addEventListener('mouseup', (e) => {
@@ -45,6 +48,9 @@ document.addEventListener('mouseup', (e) => {
 
   cursorOuter.style.transform = `translate(${clientX - 18.5}px, ${clientY - 18.5}px)`;
   cursorInner.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
+  dragCursor.style.width = `170px`;
+  dragCursor.style.height = `170px`;
+  dragCursor.style.transform = `translate(${clientX - 85}px, ${clientY - 85}px)`;
 });
 
 
@@ -74,19 +80,6 @@ document.getElementById('carousel').addEventListener('mouseleave', () => {
   dragCursor.style.opacity = 0;
 });
 
-document.getElementById('carousel').addEventListener('mousedown', (e) => {
-  const { clientX, clientY } = e;
-  dragCursor.style.width = `230px`;
-  dragCursor.style.height = `230px`;
-  dragCursor.style.transform = `translate(${clientX - 115}px, ${clientY - 115}px)`;
-});
-
-document.getElementById('carousel').addEventListener('mouseup', (e) => {
-  const { clientX, clientY } = e;
-  dragCursor.style.width = `170px`;
-  dragCursor.style.height = `170px`;
-  dragCursor.style.transform = `translate(${clientX - 85}px, ${clientY - 85}px)`;
-});
 
 document.querySelectorAll('.more_buttons').forEach(item => {
   item.addEventListener('mouseenter', () => {

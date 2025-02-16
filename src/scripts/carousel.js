@@ -6,41 +6,79 @@ document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".carousel-item");
     const totalItems = items.length;
     let currentIndex = 0;
-    let startX = 0;
     let isDragging = false;
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
 
     const updateCarousel = () => {
-        carousel.style.transform = `translateX(${-(currentIndex) * 375 + (carousel.offsetWidth / 2 - 150)}px)`;
+        currentTranslate = -(currentIndex * 375) + (carousel.offsetWidth / 2 - 150);
+        carousel.style.transform = `translateX(${currentTranslate}px)`;
         progressBar.style.width = `${((currentIndex + 1) / totalItems) * 100}%`;
     };
-
+ 
     nextBtn.addEventListener("click", () => {
         if (currentIndex < totalItems - 1) {
-            let button = document.getElementsByClassName("arrow_buttons")[0];
-            currentIndex = (currentIndex + 1) % totalItems;
-            button.disabled = false;
+            currentIndex++;
+            prevBtn.disabled = false;
             updateCarousel();
         }
-        if (currentIndex == totalItems - 1) {
-            let button = document.getElementsByClassName("arrow_buttons")[1];
-            button.disabled = true;
+        if (currentIndex === totalItems - 1) {
+            nextBtn.disabled = true;
         }
     });
 
     prevBtn.addEventListener("click", () => {
         if (currentIndex > 0) {
-            let button = document.getElementsByClassName("arrow_buttons")[1];
-            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-            button.disabled = false;
+            currentIndex--;
+            nextBtn.disabled = false;
             updateCarousel();
         }
-        if (currentIndex == 0) {
-            let button = document.getElementsByClassName("arrow_buttons")[0];
-            button.disabled = true;
+        if (currentIndex === 0) {
+            prevBtn.disabled = true;
         }
     });
 
+    const touchStart = (event) => {
+        isDragging = true;
+        startX = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
+        prevTranslate = currentTranslate;
+        animationID = requestAnimationFrame(animation);
+        carousel.classList.add("grabbing");
+    };
+
+    const touchMove = (event) => {
+        if (!isDragging) return;
+        const currentX = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
+        const diff = currentX - startX;
+        currentTranslate = prevTranslate + diff;
+    };
+
+    const touchEnd = () => {
+        cancelAnimationFrame(animationID);
+        isDragging = false;
+        carousel.classList.remove("grabbing");
+
+        const movedBy = currentTranslate - prevTranslate;
+        if (movedBy < -50 && currentIndex < totalItems - 1) {
+            currentIndex++;
+        }
+        if (movedBy > 50 && currentIndex > 0) {
+            currentIndex--;
+        }
+
+        updateCarousel();
+    };
+
+    const animation = () => {
+        carousel.style.transform = `translateX(${currentTranslate}px)`;
+        if (isDragging) requestAnimationFrame(animation);
+    };
+
+    carousel.addEventListener("mousedown", touchStart);
+    carousel.addEventListener("mousemove", touchMove);
+    carousel.addEventListener("mouseup", touchEnd);
 
     updateCarousel();
 });
-
