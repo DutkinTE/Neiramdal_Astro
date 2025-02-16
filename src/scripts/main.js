@@ -11,6 +11,7 @@ headers.forEach(header => {
     const isOpen = content.classList.contains('open');
 
 
+
     document.querySelectorAll('.skills-part-content').forEach(item => {
       content.style.opacity = 0;
       item.classList.remove('open');
@@ -29,10 +30,19 @@ headers.forEach(header => {
           header.parentElement.style.color = `#f5f5f5`;
           header.parentElement.querySelector('.skills-part-icon').style.filter = `none`;
           content.classList.add('open');
+          
           content.style.maxHeight = content.scrollHeight + 'px';
           icon.classList.add('rotate');
+          setTimeout(() => {
+            window.scrollTo({
+              top: header.getBoundingClientRect().top + window.scrollY - 200,
+              behavior: "smooth"
+            });
+          }, 1000);
+         
           resolve();
         });
+        
       }
 
       async function runTasks() {

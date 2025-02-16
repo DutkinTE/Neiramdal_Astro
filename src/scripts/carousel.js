@@ -24,6 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 items[i].style.filter = 'none';
             }
         }
+        if (currentIndex === totalItems - 1) {
+            nextBtn.disabled = true;
+        } 
+        else {
+            nextBtn.disabled = false;
+        }
+        if (currentIndex === 0) {
+            prevBtn.disabled = true;
+        }
+        else {
+            prevBtn.disabled = false;
+        }
     };
  
     nextBtn.addEventListener("click", () => {
