@@ -35,9 +35,9 @@ document.addEventListener('mousedown', (e) => {
 
   cursorOuter.style.transform = `translate(${clientX - 16}px, ${clientY - 16}px)`;
   cursorInner.style.transform = `translate(${clientX - 6}px, ${clientY - 6}px)`;
-  dragCursor.style.width = `230px`;
-  dragCursor.style.height = `230px`;
-  dragCursor.style.transform = `translate(${clientX - 115}px, ${clientY - 115}px)`;
+  dragCursor.style.width = `170px`;
+  dragCursor.style.height = `170px`;
+  dragCursor.style.transform = `translate(${clientX - 85}px, ${clientY - 85}px)`;
 });
 
 document.addEventListener('mouseup', (e) => {
@@ -49,9 +49,9 @@ document.addEventListener('mouseup', (e) => {
 
   cursorOuter.style.transform = `translate(${clientX - 18.5}px, ${clientY - 18.5}px)`;
   cursorInner.style.transform = `translate(${clientX - 4}px, ${clientY - 4}px)`;
-  dragCursor.style.width = `170px`;
-  dragCursor.style.height = `170px`;
-  dragCursor.style.transform = `translate(${clientX - 85}px, ${clientY - 85}px)`;
+  dragCursor.style.width = `140px`;
+  dragCursor.style.height = `140px`;
+  dragCursor.style.transform = `translate(${clientX - 70}px, ${clientY - 70}px)`;
 });
 
 
@@ -69,13 +69,13 @@ document.addEventListener('mousemove', (e) => {
   dragCursor.style.transform = `translate(${clientX - 85}px, ${clientY - 85}px)`;
 });
 
-document.getElementById('carousel-container').addEventListener('mouseenter', () => {
+document.getElementById('carousel').addEventListener('mouseenter', () => {
   cursorOuter.style.opacity = 0;
   cursorInner.style.opacity = 0;
   dragCursor.style.opacity = 1;
 });
 
-document.getElementById('carousel-container').addEventListener('mouseleave', () => {
+document.getElementById('carousel').addEventListener('mouseleave', () => {
   cursorOuter.style.opacity = 1;
   cursorInner.style.opacity = 1;
   dragCursor.style.opacity = 0;
