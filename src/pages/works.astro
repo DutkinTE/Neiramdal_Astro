@@ -18,20 +18,67 @@ import "../styles/global.css";
     <title>Работы</title>
   </head>
   <body>
+    <div class="overlay active">
+      <div class="overplay-white"></div>
+    </div>
     <main id="works">
       <WorksHeader />
       <div class="container">
         <div class="center">
+          <video
+            id="background-video"
+            autoplay
+            muted
+            loop
+            height="700"
+            width="700"
+          >
+            <source src="/assets/videos/intro.mp4" />
+          </video>
         </div>
       </div>
     </main>
     <script>
-      import "../scripts/cursor.js";
+      import "../scripts/cursorForWorks.js";
+      import "../scripts/overlayForWorks.js";
+      window.addEventListener("load", () => {
+        const overlay = document.querySelector(".overlay");
+        setTimeout(() => {
+          if (overlay) overlay.classList.remove("active");
+        }, 100);
+      });
+      window.addEventListener("pageshow", function (event) {
+        const overlay = document.querySelector(".overlay");
+        if (overlay) {
+          overlay.classList.remove("active");
+        }
+      });
     </script>
   </body>
 </html>
 
 <style>
+  .overplay-white {
+    top: 0;
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .overlay {
+    position: fixed;
+    bottom: 200vh;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    background-color: #040404;
+    transition: bottom 1.6s ease-in-out;
+    z-index: 9999;
+  }
+
+  .overlay.active {
+    bottom: -100vh;
+  }
   #works {
     width: calc(100% - 140px);
     height: 750px;

@@ -26,14 +26,22 @@ import "../styles/global.css";
     <title>Neiramdal</title>
   </head>
   <body onload="window.scrollTo(0, 0);">
+    <div class="overlay active">
+      <div class="overplay-white"></div>
+    </div>
     <MainIsland />
     <main id="main">
       <MainHeader />
       <div class="container">
-        <video id="background-video" autoplay muted loop>
-          <source src="/assets/videos/intro.mp4" />
-        </video>
-
+        <script
+          type="module"
+          src="https://unpkg.com/@splinetool/viewer@1.9.68/build/spline-viewer.js"
+        ></script>
+        <spline-viewer
+          id="background-video"
+          url="https://prod.spline.design/94lNqMqdETVwhA1N/scene.splinecode"
+        ></spline-viewer>
+        <div class="black-box"></div>
         <MainContent />
       </div>
     </main>
@@ -52,7 +60,16 @@ import "../styles/global.css";
         <MainOurWorks />
       </div>
       <div id="order">
-        <div id="three-container"></div>
+        <div id="three-container">
+          <script
+            type="module"
+            src="https://unpkg.com/@splinetool/viewer@1.9.68/build/spline-viewer.js"
+          ></script>
+          <spline-viewer
+            url="https://prod.spline.design/C0AVB1at0BFjnOsQ/scene.splinecode"
+          ></spline-viewer>
+          <div class="black-box2"></div>
+        </div>
         <MainOrder />
       </div>
       <Footer />
@@ -65,26 +82,79 @@ import "../styles/global.css";
       import "../scripts/nav.js";
       import "../scripts/video-move.js";
       import "../scripts/blackout.js";
-      import "../scripts/three.js";
+      import "../scripts/overlay.js";
     </script>
   </body>
   <script type="text/javascript">
     window.onbeforeunload = function () {
       window.scrollTo(0, 0);
-    }
-    console.log('success');
-    
-</script>
+      const overlay = document.querySelector(".overlay");
+      setTimeout(() => {
+        if (overlay) overlay.classList.remove("active");
+      }, 100);
+    };
+
+    window.addEventListener("pageshow", function (event) {
+      const overlay = document.querySelector(".overlay");
+      if (overlay) {
+        overlay.classList.remove("active");
+      }
+    });
+  </script>
 </html>
 
 <style>
+  .black-box {
+    position: absolute;
+    bottom: 0%;
+    right: -200px;
+    background-color: #040404;
+    width: 158px;
+    height: 500px;
+    z-index: 9999999;
+  }
+
+  .black-box2 {
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    background-color: #040404;
+    width: 158px;
+    height: 500px;
+    z-index: 9999999;
+  }
+
+  .overplay-white {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .overlay {
+    display: flex;
+    flex-direction: column-reverse;
+
+    position: fixed;
+    bottom: -200vh;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    background-color: #040404;
+    transition: bottom 1.6s ease-in-out;
+    z-index: 9999;
+  }
+
+  .overlay.active {
+    bottom: 0;
+  }
+
   #three-container {
     position: absolute;
     top: 0;
-    left: 50%;
-    height: 1080px;
-    transform: translateX(-50%);
-    z-index: -1;
+    overflow: hidden;
+    width: calc(100%-);
+    height: 700px;
+    z-index: 9999;
   }
   #order {
     height: 1080px;
@@ -156,12 +226,14 @@ import "../styles/global.css";
 
   #background-video {
     position: absolute;
-    bottom: -200px;
-    right: 0px;
+    top: -100px;
+    right: -200px;
     object-fit: cover;
     z-index: -1;
     transition: all 0.5s;
-    height: 700px;
+    width: 900px;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   #who {
