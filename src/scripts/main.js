@@ -10,13 +10,10 @@ headers.forEach(header => {
     const icon = header.querySelector('.skills-part-icon');
     const isOpen = content.classList.contains('open');
 
-
-
     document.querySelectorAll('.skills-part-content').forEach(item => {
       content.style.opacity = 0;
       item.classList.remove('open');
       item.style.maxHeight = null;
-
     });
 
     document.querySelectorAll('.skills-part-icon').forEach(icon => {
@@ -30,7 +27,6 @@ headers.forEach(header => {
           header.parentElement.style.color = `#f5f5f5`;
           header.parentElement.querySelector('.skills-part-icon').style.filter = `none`;
           content.classList.add('open');
-          
           content.style.maxHeight = content.scrollHeight + 'px';
           icon.classList.add('rotate');
           setTimeout(() => {
@@ -39,12 +35,10 @@ headers.forEach(header => {
               behavior: "smooth"
             });
           }, 1000);
-         
+
           resolve();
         });
-        
       }
-
       async function runTasks() {
         await firstTask();
 
@@ -110,7 +104,6 @@ document.getElementById('island-logo').addEventListener('click', () => {
 
 const hoverBg = document.querySelector(".hover-bg");
 
-
 document.getElementById('nav-who-we-are').addEventListener('mouseenter', (e) => {
   const { left, width } = e.target.getBoundingClientRect();
   const containerLeft = e.target.parentElement.getBoundingClientRect().left;
@@ -153,4 +146,14 @@ document.getElementById('nav-contacts').addEventListener('mouseenter', (e) => {
   document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
   document.getElementById('nav-projects').style.color = `#f5f5f5`;
   document.getElementById('nav-skills').style.color = `#f5f5f5`;
+});
+
+document.getElementById("contact_button").addEventListener("click", () => {
+  document.getElementById("blur-splash").style.opacity = '1';
+  document.getElementById("blur-splash").style.pointerEvents = 'all';
+});
+
+document.getElementById("blur-splash").addEventListener("click", () => {
+  document.getElementById("blur-splash").style.opacity = '0';
+  document.getElementById("blur-splash").style.pointerEvents = 'none';
 });

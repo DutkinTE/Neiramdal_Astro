@@ -1,37 +1,42 @@
 <div id="footer">
-  <div class="row1">
-    <a href="tel:+79245699299" class="number hover">+7 (924) 569-92-99</a>
-    <div class="mail">
-      <a href="mailto:neiramdal@mail.ru" class="email hover">neiramdal@mail.ru</a></div>
+  <a href="tel:+79245699299" class="number hover">+7 (924) 569-92-99</a>
+
+  <div class="col">
+    <div class="title">соцсети</div>
+    <div class="text">telegram</div>
+    <div class="text">whatsapp</div>
+    <div class="text">behance</div>
   </div>
-  <div class="row2">
-    <div class="col">
-      <div class="title">соцсети</div>
-      <div class="text">telegram</div>
-      <div class="text">whatsapp</div>
-      <div class="text">behance</div>
-    </div>
-    <div class="col">
-      <div class="title">сайт</div>
-      <div class="text">главная</div>
-      <div class="text">работы</div>
-      <div class="text">форма</div>
-    </div>
+  <div class="col">
+    <div class="title">сайт</div>
+    <div class="text">главная</div>
+    <div class="text">работы</div>
+    <div class="text">форма</div>
   </div>
-  <div class="copyright">©2024, Neiramdal Company</div>
+  <div class="col2">
+    <a href="mailto:neiramdal@mail.ru" class="email hover">neiramdal@mail.ru</a>
+    <div class="copyright">©2025, Neiramdal Company</div>
+  </div>
 </div>
 
 <style>
+  #footer .col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 73px;
+  }
   #footer .number {
-    color: #5b5b5b;
+    font-size: 24px;
+    color: #7b7b7b;
     text-decoration: none;
     transition: all 0.5s;
   }
 
   #footer .email {
-    color: #5b5b5b;
+    color: #7b7b7b;
     text-decoration: none;
     transition: all 0.5s;
+    font-size: 24px;
   }
 
   #footer .email:hover {
@@ -43,46 +48,31 @@
   }
   #footer .title {
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   #footer .text {
-    margin-bottom: 15px;
-  }
-
-  #footer .row2 {
-    display: flex;
-    justify-content: space-between;
-    width: 400px;
+    margin-bottom: 10px;
     font-size: 16px;
   }
 
   #footer .copyright {
-    width: 100%;
-    text-align: end;
-    padding-right: 40px;
-    font-size: 20px;
-  }
-
-  #footer .row1 {
-    margin-bottom: 85px;
-    display: flex;
-    font-size: 24px;
-    width: 100%;
-    justify-content: space-between;
+    font-size: 16px;
   }
 
   #footer {
     font-weight: normal;
-    padding-top: 60px;
+    padding-top: 30px;
     padding-left: 70px;
     padding-right: 70px;
     width: 100%;
     max-width: 1440px;
-    height: 400px;
+    height: 200px;
     z-index: 6;
-    background-color: #050505;
-    color: #5b5b5b;
+    background-color: #070707;
+    color: #7b7b7b;
     position: relative;
+    display: flex;
+    justify-content: space-between;
   }
 </style>
