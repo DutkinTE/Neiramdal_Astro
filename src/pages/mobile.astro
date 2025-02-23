@@ -6,7 +6,7 @@ import "../styles/globalMobile.css";
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="assets/images/white_logo.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,31 +46,31 @@ import "../styles/globalMobile.css";
             
             <div class="whoEnd">
                 <h2>Почему именно мы?</h2>
-                <div class="WhoCard1">
-                    <h2 id="card1">Индивидуальный подход</h2>
+                <div class="WhoCard">
+                    <h2 class="h2who" id="card1">Индивидуальный подход</h2>
                     <p>Анализируем бизнес и разрабатываем <br />
                         продукт, соответствующий Вашим целям</p>
                 </div>
-                <div class="WhoCard2">
-                    <h2 id="card2">Соответствие мировым <br />
+                <div class="WhoCard">
+                    <h2 class="h2who" id="card2">Соответствие мировым <br />
                         стандартам</h2>
                     <p>В нашем арсенале только передовые <br />
                         инструменты и фреймворки, необходимые <br />
                         для надежных и адаптируемых решений</p>
                 </div>
-                <div class="WhoCard3">
-                    <h2 id="card3">Гарантия результата</h2>
+                <div class="WhoCard">
+                    <h2 class="h2who" id="card3">Гарантия результата</h2>
                     <p>Наши проекты проходят тщательное <br /> 
                         тестирование на каждом этапе, <br /> 
                         что обеспечивает уверенность <br /> 
                         в конечном продукте</p>
                 </div>
-                <div class="WhoCard4">
-                    <h2 id="card4">Комплексная поддержка <br />
+                <div class="WhoCard">
+                    <h2 class="h2who" id="card4">Комплексная поддержка <br />
                         на каждом этапе</h2>
                     <p>Сопровождаем проекты и после их запуска, <br /> 
-                        помогая адаптироваться к <br />
-                        быстро меняющимся потребностям бизнеса</p>
+                        помогая адаптироваться к быстро <br />
+                        меняющимся потребностям бизнеса</p>
                 </div>
             </div>
 
@@ -85,15 +85,31 @@ import "../styles/globalMobile.css";
 </html>
 
 <style>
+:root {
 
-    #card1 {
+}
+.WhoCard {
+    background-color: #0B0B0B;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    margin-left: 27px;
+    margin-right: 27px;
+    padding: 15px;
+    padding-left: 0px;
+    height: 140px;
+}
+
+.h2who {
+    padding-bottom: 15px !important;
+}
+#card1 {
     background-image: linear-gradient(90deg, #5332CD, #A568DA, #5332CD);
     background-size: 200% 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: moveGradient 5s linear infinite;
-  }
+}
 
   #card2 {
     background-image: linear-gradient(90deg, #5124E7, #8268DA, #5124E7);
@@ -134,18 +150,22 @@ import "../styles/globalMobile.css";
     }
 
     header {
-    width: 100%;
     display: flex;
     justify-content: space-between ;
     align-items: center;
-    padding: 42px;
+    padding-left: 42px;
+    padding-right: 42px;
+    padding-top: 44px;
     }
-
+    
     #logoHeader {
         height: 35px;
     }
+    
     #menuHeader {
         height: 23px;
+        width: 23px;
+        max-width: 100%;
     }
 
     .MainInf {
@@ -153,14 +173,12 @@ import "../styles/globalMobile.css";
         flex-direction: column;
         align-items: center;
         text-align: center;
-        
+        padding-top: 200px;
     }
 
-   
-
-
-
-
-
+    .who {
+        padding-top: 87px;
+        padding-bottom: 60px;
+    }
     
 </style>
