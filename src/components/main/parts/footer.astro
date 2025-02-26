@@ -4,23 +4,34 @@
   </div>
 
   <div class="col">
-    <div class="title">соцсети</div>
-    <div class="text hover">telegram</div>
-    <div class="text hover">whatsapp</div>
-    <div class="text hover">behance</div>
+    <div class="title">Соцсети</div>
+    <a href="https://t.me/Neiramdal" class="text hover" target="_blank"
+      >Telegram</a
+    >
+    <a
+      href="https://api.whatsapp.com/send?phone=89245699299"
+      class="text hover"
+      target="_blank"
+    >
+      Whatsapp
+    </a>
+    <!-- <div class="text hover">Behance</div> -->
   </div>
   <div class="col">
-    <div class="title">сайт</div>
-    <div class="text hover">главная</div>
-    <div class="text hover">работы</div>
+    <div class="title">Сайт</div>
+    <a href="/" class="text hover">Главная</a>
+    <a href="/works" class="text hover">Работы</a>
   </div>
   <div class="col2">
     <a href="mailto:neiramdal@mail.ru" class="email hover">neiramdal@mail.ru</a>
-    <div class="copyright">©2025, Neiramdal Company</div>
+    <div class="copyright">©2024-2025, Neiramdal Company</div>
   </div>
 </div>
 
 <style>
+  a {
+    cursor: none
+  }
   .number_div {
     overflow: hidden;
   }
@@ -41,6 +52,7 @@
     overflow: hidden;
     position: relative;
     transition: all 0.5s;
+    text-decoration: none;
   }
 
   .hover:hover {
@@ -49,6 +61,11 @@
 
   .hover:hover::after {
     left: 0;
+  }
+
+  #footer .col {
+    display: flex;
+    flex-direction: column;
   }
 
   #footer .col2 {
@@ -69,10 +86,11 @@
     transition: all 0.5s;
     font-size: 24px;
   }
-  
+
   #footer .title {
     font-size: 20px;
     margin-bottom: 20px;
+    color: #7b7b7b;
   }
 
   #footer .text {

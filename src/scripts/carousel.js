@@ -12,62 +12,50 @@ document.addEventListener("DOMContentLoaded", () => {
     let prevTranslate = 0;
     let animationID;
 
-    const updateCarousel = () => {
+    // Центрируем первый элемент при загрузке
+    const updateCarousel = (animate = true) => {
         currentTranslate = -(currentIndex * 375) + (carousel.offsetWidth / 2 - 150);
+        carousel.style.transition = animate ? "transform 0.3s ease" : "none";
         carousel.style.transform = `translateX(${currentTranslate}px)`;
+
+        // Обновление прогресс-бара
         progressBar.style.width = `${((currentIndex + 1) / totalItems) * 100}%`;
-        for (let i = 0; i < totalItems; i++) {
-            if (i != currentIndex) {
-                items[i].style.filter = 'blur(5px)';
-            }
-            else {
-                items[i].style.filter = 'none';
-            }
-        }
-        if (currentIndex === totalItems - 1) {
-            nextBtn.disabled = true;
-        } 
-        else {
-            nextBtn.disabled = false;
-        }
-        if (currentIndex === 0) {
-            prevBtn.disabled = true;
-        }
-        else {
-            prevBtn.disabled = false;
-        }
+
+        // Обновляем размытие элементов
+        items.forEach((item, index) => {
+            item.style.filter = index === currentIndex ? "none" : "blur(5px)";
+        });
+
+        // Блокируем/разблокируем кнопки
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === totalItems - 1;
     };
- 
+
     nextBtn.addEventListener("click", () => {
         if (currentIndex < totalItems - 1) {
             currentIndex++;
-            prevBtn.disabled = false;
             updateCarousel();
-        }
-        if (currentIndex === totalItems - 1) {
-            nextBtn.disabled = true;
         }
     });
 
     prevBtn.addEventListener("click", () => {
         if (currentIndex > 0) {
             currentIndex--;
-            nextBtn.disabled = false;
             updateCarousel();
-        }
-        if (currentIndex === 0) {
-            prevBtn.disabled = true;
         }
     });
 
+    // Начало свайпа
     const touchStart = (event) => {
         isDragging = true;
         startX = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
         prevTranslate = currentTranslate;
         animationID = requestAnimationFrame(animation);
+        carousel.style.transition = "none";
         carousel.classList.add("grabbing");
     };
 
+    // Перемещение
     const touchMove = (event) => {
         if (!isDragging) return;
         const currentX = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
@@ -75,30 +63,40 @@ document.addEventListener("DOMContentLoaded", () => {
         currentTranslate = prevTranslate + diff;
     };
 
+    // Завершение свайпа
     const touchEnd = () => {
-        cancelAnimationFrame(animationID);
+        if (!isDragging) return;
         isDragging = false;
+        cancelAnimationFrame(animationID);
         carousel.classList.remove("grabbing");
 
         const movedBy = currentTranslate - prevTranslate;
         if (movedBy < -50 && currentIndex < totalItems - 1) {
             currentIndex++;
-        }
-        if (movedBy > 50 && currentIndex > 0) {
+        } else if (movedBy > 50 && currentIndex > 0) {
             currentIndex--;
         }
 
         updateCarousel();
     };
 
+    // Анимация
     const animation = () => {
         carousel.style.transform = `translateX(${currentTranslate}px)`;
         if (isDragging) requestAnimationFrame(animation);
     };
 
+    // Добавляем обработчики событий
     carousel.addEventListener("mousedown", touchStart);
     carousel.addEventListener("mousemove", touchMove);
     carousel.addEventListener("mouseup", touchEnd);
+    carousel.addEventListener("mouseleave", touchEnd); // Улучшает UX, если отпустить мышь за пределами карусели
 
-    updateCarousel();
+    // Мобильные события
+    carousel.addEventListener("touchstart", touchStart);
+    carousel.addEventListener("touchmove", touchMove);
+    carousel.addEventListener("touchend", touchEnd);
+
+    // Первоначальная настройка
+    updateCarousel(false);
 });
