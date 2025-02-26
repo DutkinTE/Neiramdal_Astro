@@ -64,6 +64,17 @@ function handleScroll() {
 
   // прокрутка вниз
   if (currentScrollY > lastScrollY) {
+
+    if (currentScrollY > document.getElementById('who-end').getBoundingClientRect().top + window.scrollY + 100) {
+      parent = document.querySelector('#who-end');
+
+      const children = parent.children;
+
+      for (let child of children) {
+        child.style.filter = 'blur(30px)';
+      }
+    }
+
     // island 
     if (currentScrollY < 700) {
       document.getElementById('main-header').style.maxWidth = `${window.innerWidth - ((window.innerWidth - 1440) / 700) * currentScrollY}px`;
@@ -97,6 +108,7 @@ function handleScroll() {
     else {
       moveHoverBgToButton(document.getElementById('nav-projects'));
     }
+
 
   }
   // прокрутка вверх

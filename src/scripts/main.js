@@ -1,7 +1,3 @@
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0); // Прокручивает страницу к координатам (0, 0)
-});
-
 const headers = document.querySelectorAll('.skills-part-header');
 
 headers.forEach(header => {
@@ -77,7 +73,6 @@ document.getElementById('island').addEventListener('mouseenter', () => {
   if (document.getElementById('island').style.top == '-70px') {
     document.getElementById('island-logo').style.opacity = `1`;
     document.getElementById('island').style.top = `30px`;
-    document.getElementById('island').style.borderBottom = `none`;
   }
 });
 
@@ -88,7 +83,6 @@ document.getElementById('island').addEventListener('mouseleave', (e) => {
       setTimeout(() => {
         document.getElementById('island-logo').style.opacity = `0`;
         document.getElementById('island').style.top = `${-70}px`;
-        document.getElementById('island').style.borderBottom = `0.1px solid #f5f5f5`;
       }, 1500);
     }
 
@@ -156,4 +150,10 @@ document.getElementById("contact_button").addEventListener("click", () => {
 document.getElementById("blur-splash").addEventListener("click", () => {
   document.getElementById("blur-splash").style.opacity = '0';
   document.getElementById("blur-splash").style.pointerEvents = 'none';
+});
+
+document.getElementById("button-contacts").addEventListener('click', () => {
+  document.getElementById('order').scrollIntoView({
+      behavior: 'smooth'
+  });
 });
