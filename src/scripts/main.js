@@ -1,3 +1,18 @@
+function checkScreenSize() {
+  if (window.innerWidth <= 768) {
+    if (window.location.pathname !== "/mobile") {
+      window.location.href = "/mobile";
+    }
+  }
+
+}
+
+window.addEventListener("load", checkScreenSize);
+
+window.addEventListener("resize", checkScreenSize);
+
+
+
 const headers = document.querySelectorAll('.skills-part-header');
 
 headers.forEach(header => {
@@ -154,6 +169,6 @@ document.getElementById("blur-splash").addEventListener("click", () => {
 
 document.getElementById("button-contacts").addEventListener('click', () => {
   document.getElementById('order').scrollIntoView({
-      behavior: 'smooth'
+    behavior: 'smooth'
   });
 });

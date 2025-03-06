@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let prevTranslate = 0;
     let animationID;
 
+    window.addEventListener('resize', () => {
+        updateCarousel();
+    });
+    
+
     const updateCarousel = (animate = true) => {
         currentTranslate = -(currentIndex * 375) + (carousel.offsetWidth / 2 - 150);
         carousel.style.transition = animate ? "transform 0.3s ease" : "none";
