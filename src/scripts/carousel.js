@@ -12,21 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let prevTranslate = 0;
     let animationID;
 
-    // Центрируем первый элемент при загрузке
     const updateCarousel = (animate = true) => {
         currentTranslate = -(currentIndex * 375) + (carousel.offsetWidth / 2 - 150);
         carousel.style.transition = animate ? "transform 0.3s ease" : "none";
         carousel.style.transform = `translateX(${currentTranslate}px)`;
 
-        // Обновление прогресс-бара
         progressBar.style.width = `${((currentIndex + 1) / totalItems) * 100}%`;
 
-        // Обновляем размытие элементов
         items.forEach((item, index) => {
             item.style.filter = index === currentIndex ? "none" : "blur(5px)";
         });
 
-        // Блокируем/разблокируем кнопки
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex === totalItems - 1;
     };
@@ -45,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Начало свайпа
+
     const touchStart = (event) => {
         isDragging = true;
         startX = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
@@ -55,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         carousel.classList.add("grabbing");
     };
 
-    // Перемещение
+
     const touchMove = (event) => {
         if (!isDragging) return;
         const currentX = event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
@@ -63,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentTranslate = prevTranslate + diff;
     };
 
-    // Завершение свайпа
+
     const touchEnd = () => {
         if (!isDragging) return;
         isDragging = false;
@@ -80,23 +76,23 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCarousel();
     };
 
-    // Анимация
+
     const animation = () => {
         carousel.style.transform = `translateX(${currentTranslate}px)`;
         if (isDragging) requestAnimationFrame(animation);
     };
 
-    // Добавляем обработчики событий
+
     carousel.addEventListener("mousedown", touchStart);
     carousel.addEventListener("mousemove", touchMove);
     carousel.addEventListener("mouseup", touchEnd);
-    carousel.addEventListener("mouseleave", touchEnd); // Улучшает UX, если отпустить мышь за пределами карусели
+    carousel.addEventListener("mouseleave", touchEnd); 
 
-    // Мобильные события
+ 
     carousel.addEventListener("touchstart", touchStart);
     carousel.addEventListener("touchmove", touchMove);
     carousel.addEventListener("touchend", touchEnd);
 
-    // Первоначальная настройка
+
     updateCarousel(false);
 });

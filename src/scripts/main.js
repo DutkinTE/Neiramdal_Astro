@@ -19,7 +19,7 @@ headers.forEach(header => {
     if (!isOpen) {
       function firstTask() {
         return new Promise((resolve) => {
-          header.parentElement.style.backgroundColor = `#070707`;
+          header.parentElement.style.backgroundColor = `#040404`;
           header.parentElement.style.color = `#f5f5f5`;
           header.parentElement.querySelector('.skills-part-icon').style.filter = `none`;
           content.classList.add('open');
