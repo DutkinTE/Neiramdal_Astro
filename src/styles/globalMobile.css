@@ -1,0 +1,42 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    background-color: #040404;
+    font-family: "Play", serif;
+
+  }
+
+main {
+    width: 100%;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 30px;
+    line-height: 140%;
+    margin-left: 27px;
+}
+p {
+    font-size: 14px;
+    font-weight: normal;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    line-height: 140%;
+    margin-left: 27px;
+}
