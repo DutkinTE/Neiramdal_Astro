@@ -24,12 +24,10 @@ function drawLineWithSmoothHill() {
   ctx.lineTo(0, canvas.height);
   ctx.closePath();
 
-  // Apply blur effect
   ctx.fillStyle = 'rgba(7, 7, 7, 1)';
   ctx.filter = 'blur(45px)';
   ctx.fill();
 
-  // Обводка с размытием
   ctx.beginPath();
   ctx.moveTo(startX, startY);
   ctx.arcTo(hillCenter - 100, startY, hillCenter - 70, startY - curveRadius, curveRadius);

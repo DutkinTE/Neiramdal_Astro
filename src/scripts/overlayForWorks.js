@@ -1,7 +1,6 @@
 document.getElementById('mainPage').addEventListener('click', function () {
-    const overlay = document.querySelector('.overlay');
-    overlay.classList.add('active');
+    document.querySelector(".overlay").classList.remove('hidden');
     setTimeout(() => {
         window.location.href = "/";
-    }, 1700);
+    }, 2500);
 });

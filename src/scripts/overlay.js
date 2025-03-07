@@ -1,9 +1,13 @@
 document.getElementById('worksPage').addEventListener('click', function () {
-    const overlay = document.querySelector('.overlay');
-    overlay.classList.add('active');
+    document.querySelector(".overlay").classList.remove('hidden');
     setTimeout(() => {
         window.location.href = "/works";
-    }, 1700);
+    }, 2500);
 });
 
-
+document.getElementById('worksPage2').addEventListener('click', function () {
+    document.querySelector(".overlay").classList.remove('hidden');
+    setTimeout(() => {
+        window.location.href = "/works";
+    }, 2500);
+});

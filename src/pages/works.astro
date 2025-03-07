@@ -18,8 +18,12 @@ import "../styles/global.css";
     <title>Работы</title>
   </head>
   <body>
-    <div class="overlay active">
-      <div class="overplay-white"></div>
+    <div class="overlay">
+      <div class="overlay-strip"></div>
+      <div class="overlay-strip"></div>
+      <div class="overlay-strip"></div>
+      <div class="overlay-strip"></div>
+      <div class="overlay-strip"></div>
     </div>
     <main id="works">
       <WorksHeader />
@@ -41,43 +45,86 @@ import "../styles/global.css";
     <script>
       import "../scripts/cursorForWorks.js";
       import "../scripts/overlayForWorks.js";
+      
+    </script>
+    <script type="module">
       window.addEventListener("load", () => {
-        const overlay = document.querySelector(".overlay");
         setTimeout(() => {
-          if (overlay) overlay.classList.remove("active");
-        }, 100);
+          document.querySelector(".overlay").classList.add("hidden");
+        }, 200);
       });
       window.addEventListener("pageshow", function (event) {
-        const overlay = document.querySelector(".overlay");
-        if (overlay) {
-          overlay.classList.remove("active");
-        }
+        setTimeout(() => {
+          document.querySelector(".overlay").classList.add("hidden");
+        }, 200);
       });
     </script>
   </body>
 </html>
 
 <style>
-  .overplay-white {
-    top: 0;
-    background-color: #241064;
-    width: 100%;
-    height: 100vh;
-  }
-
   .overlay {
+    display: flex;
     position: fixed;
-    bottom: 200vh;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 200vh;
-    background-color: #040404;
-    transition: bottom 1.6s ease-in-out;
+    height: 100vh;
     z-index: 9999;
+    pointer-events: none;
   }
 
-  .overlay.active {
-    bottom: -100vh;
+  .overlay-strip {
+    flex: 1;
+    background-color: #0a0a0a;
+    height: 100%;
+    transform: translateY(
+      0
+    );
+    transition: transform 1.2s ease-in-out;
+  }
+
+  
+  .overlay.hidden .overlay-strip:nth-child(1) {
+    transition-delay: 0s;
+    transform: translateY(-100%);
+  }
+  .overlay.hidden .overlay-strip:nth-child(2) {
+    transition-delay: 0.2s;
+    transform: translateY(-100%);
+  }
+  .overlay.hidden .overlay-strip:nth-child(3) {
+    transition-delay: 0.4s;
+    transform: translateY(-100%);
+  }
+  .overlay.hidden .overlay-strip:nth-child(4) {
+    transition-delay: 0.6s;
+    transform: translateY(-100%);
+  }
+  .overlay.hidden .overlay-strip:nth-child(5) {
+    transition-delay: 0.8s;
+    transform: translateY(-100%);
+  }
+
+  .overlay .overlay-strip .overlay-strip:nth-child(1) {
+    transition-delay: 0s;
+    transform: translateY(0);
+  }
+  .overlay .overlay-strip:nth-child(2) {
+    transition-delay: 0.2s;
+    transform: translateY(0);
+  }
+  .overlay .overlay-strip:nth-child(3) {
+    transition-delay: 0.4s;
+    transform: translateY(0);
+  }
+  .overlay .overlay-strip:nth-child(4) {
+    transition-delay: 0.6s;
+    transform: translateY(0);
+  }
+  .overlay .overlay-strip:nth-child(5) {
+    transition-delay: 0.8s;
+    transform: translateY(0);
   }
   #works {
     width: calc(100% - 140px);

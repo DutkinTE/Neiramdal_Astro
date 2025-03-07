@@ -20,8 +20,12 @@ document.querySelectorAll('.hover').forEach(element => {
 });
 
 document.addEventListener('mousemove', (e) => {
-  const { clientX, clientY } = e;
 
+  const { clientX, clientY } = e;
+  if (window.getComputedStyle(document.querySelector(".cursor-inner")).opacity === "0") {
+    cursorOuter.style.opacity = "1";
+    cursorInner.style.opacity = "1";
+  }
   cursorOuter.style.transform = `translate(${clientX - 18.5}px, ${clientY - 18.5}px)`;
   cursorInner.style.transform = `translate(${clientX - cursorInner.offsetWidth / 2}px, ${clientY - cursorInner.offsetWidth / 2}px)`;
 });
