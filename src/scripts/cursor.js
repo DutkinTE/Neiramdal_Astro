@@ -21,6 +21,11 @@ document.querySelectorAll('.hover').forEach(element => {
 
 document.addEventListener('mousemove', (e) => {
   const { clientX, clientY } = e;
+  if (window.getComputedStyle(document.querySelector(".cursor-inner")).opacity === "0") {
+    cursorOuter.style.opacity = "1";
+    cursorInner.style.opacity = "1";
+  }
+
 
   cursorOuter.style.transform = `translate(${clientX - 18.5}px, ${clientY - 18.5}px)`;
   cursorInner.style.transform = `translate(${clientX - cursorInner.offsetWidth / 2}px, ${clientY - cursorInner.offsetWidth / 2}px)`;
@@ -58,7 +63,7 @@ document.addEventListener('mouseup', (e) => {
 const dragCursor = document.createElement('div');
 const cursorText = document.createElement('div');
 cursorText.classList.add('cursor-text');
-cursorText.textContent = 'Тянуть'; 
+cursorText.textContent = 'Тянуть';
 dragCursor.classList.add('drag-cursor');
 document.body.appendChild(dragCursor);
 dragCursor.appendChild(cursorText);

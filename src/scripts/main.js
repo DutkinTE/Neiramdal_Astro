@@ -1,5 +1,5 @@
 function checkScreenSize() {
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 1500) {
     if (window.location.pathname !== "/mobile") {
       window.location.href = "/mobile";
     }
