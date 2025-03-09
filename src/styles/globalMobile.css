@@ -1,42 +1,63 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+
+body {
+  user-select: none;
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
 }
 
 body {
-    background-color: #040404;
-    font-family: "Play", serif;
-
-  }
+  background-color: #040404;
+  font-family: "Play", serif;
+}
 
 main {
-    width: 100%;
+  width: 100%;
+}
+
+img {
+  pointer-events: none;
 }
 
 h1 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #f5f5f5;
-    margin: 0;
-    padding: 0;
+  font-size: 36px;
+  font-weight: bold;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
+
 h2 {
-    font-size: 18px;
-    font-weight: normal;
-    color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 30px;
-    line-height: 140%;
-    margin-left: 27px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 30px;
+  line-height: 140%;
 }
+
 p {
-    font-size: 14px;
-    font-weight: normal;
-    color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    line-height: 140%;
-    margin-left: 27px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  line-height: 140%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  padding-left: 27px;
+  padding-right: 27px;
 }

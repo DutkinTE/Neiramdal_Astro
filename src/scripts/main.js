@@ -1,16 +1,27 @@
-function checkScreenSize() {
-  if (window.innerWidth <= 1500) {
-    if (window.location.pathname !== "/mobile") {
-      window.location.href = "/mobile";
-    }
-  }
+// function checkScreenSize() {
+//   if (window.innerWidth <= 1400) {
+//     if (window.location.pathname !== "/mobile") {
+//       window.location.href = "/mobile";
+//     }
+//   }
 
+// }
+
+// window.addEventListener("load", checkScreenSize);
+
+// window.addEventListener("resize", checkScreenSize);
+
+function isMobileDevice() {
+  return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
 }
 
-window.addEventListener("load", checkScreenSize);
+function checkDevice() {
+  if (isMobileDevice() && window.location.pathname !== "/mobile") {
+      window.location.href = "/mobile";
+  }
+}
 
-window.addEventListener("resize", checkScreenSize);
-
+window.addEventListener("load", checkDevice);
 
 
 const headers = document.querySelectorAll('.skills-part-header');
@@ -130,7 +141,7 @@ document.getElementById('nav-skills').addEventListener('mouseenter', (e) => {
   document.getElementById('nav-skills').style.color = `#070707`;
   hoverBg.style.width = `${width}px`;
   hoverBg.style.transform = `translateX(${left - containerLeft}px)`;
-  document.getElementById('nav-who-we-are').style.color = `#f5f5f5`;
+  document.getElementById('nav-who-we-are').style.color = `#f5f5f5`; 
   document.getElementById('nav-projects').style.color = `#f5f5f5`;
   document.getElementById('nav-contacts').style.color = `#f5f5f5`;
 });

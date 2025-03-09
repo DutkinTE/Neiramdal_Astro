@@ -1,0 +1,81 @@
+---
+import Who from "../parts/who.astro";
+import WhoEnd from "../parts/who-end.astro";
+import Skills from "../parts/skills.astro";
+import Works from "../parts/works.astro";
+import Contacts from "../parts/contacts.astro";
+---
+
+<main>
+  <div class="MainInf">
+    <h1 class="m_15">Neiramdal</h1>
+    <p class="mLeftNone m_30">
+      Neiramdal — Ваш партнер <br />
+      в мире цифровых технологий!
+    </p>
+    <button class="orderBtn" id="button-contacts" type="button">Заказать</button>
+  </div>
+  <div id="who">
+    <div class="container">
+      <Who />
+      <WhoEnd />
+    </div>
+  </div>
+
+  <Skills />
+  <Works/>
+  <Contacts/>
+</main>
+
+<style>
+  
+
+  #who {
+    background-color: #070707;
+    margin-top: 60px;
+  }
+
+  .orderBtn {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #0b0b0b;
+    color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    border-radius: 19px;
+    width: 187px;
+    height: 49px;
+    padding: 0;
+    transition: all 0.5s;
+  }
+
+  .orderBtn:active {
+    background-color: #f5f5f5;
+    color: #0b0b0b;
+    border-color: transparent;
+    transform: scale(0.9);
+  }
+
+  .MainInf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 350px;
+  }
+
+  .m_15 {
+    margin-bottom: 15px;
+  }
+
+  .m_30 {
+    margin-bottom: 30px;
+  }
+
+  .mLeftNone {
+    margin-left: 0px;
+  }
+
+  .generalMargin60 {
+    margin-bottom: 60px;
+  }
+</style>

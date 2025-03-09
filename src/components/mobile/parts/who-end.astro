@@ -1,0 +1,108 @@
+<div class="whoEnd">
+  <h2>Почему именно мы?</h2>
+  <div class="WhoCards">
+    <div class="WhoCard">
+      <h2 class="h2who" id="card1">Индивидуальный подход</h2>
+      <p>
+        Анализируем бизнес и разрабатываем <br />
+        продукт, соответствующий Вашим целям
+      </p>
+    </div>
+    <div class="WhoCard">
+      <h2 class="h2who" id="card2">
+        Соответствие мировым <br />
+        стандартам
+      </h2>
+      <p>
+        В нашем арсенале только передовые инструменты и фреймворки, необходимые
+        для надежных и адаптируемых решений
+      </p>
+    </div>
+    <div class="WhoCard">
+      <h2 class="h2who" id="card3">Гарантия результата</h2>
+      <p>
+        Наши проекты проходят тщательное тестирование на каждом этапе, что
+        обеспечивает уверенность в конечном продукте
+      </p>
+    </div>
+    <div class="WhoCard">
+      <h2 class="h2who" id="card4">
+        Комплексная поддержка <br />
+        на каждом этапе
+      </h2>
+      <p>
+        Сопровождаем проекты и после их запуска, помогая адаптироваться к быстро
+        меняющимся потребностям бизнеса
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .whoEnd {
+    padding-bottom: 30px;
+  }
+  .WhoCards {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+  }
+  .WhoCard {
+    background-color: #0b0b0b;
+    border-radius: 20px;
+    height: 152px;
+    padding: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .h2who {
+    padding-bottom: 15px !important;
+  }
+
+  @keyframes moveGradient {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  #card1 {
+    background-image: linear-gradient(90deg, #5332cd, #a568da, #5332cd);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 5s linear infinite;
+  }
+
+  #card2 {
+    background-image: linear-gradient(90deg, #5124e7, #8268da, #5124e7);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 5s linear infinite;
+  }
+
+  #card3 {
+    background-image: linear-gradient(90deg, #5332cd, #a568da, #5332cd);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 5s linear infinite;
+  }
+
+  #card4 {
+    background-image: linear-gradient(90deg, #5124e7, #8268da, #5124e7);
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 5s linear infinite;
+  }
+
+</style>

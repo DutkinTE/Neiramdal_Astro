@@ -7,17 +7,19 @@
   <button class="main-button hover" id="button-contacts"> Связаться </button>
 </div>
 <script>
-  const text = "Neiramdakl"; 
-  const speed = 100; 
+  const text = "Neiramdakl";
+  const speed = 100;
   const delay = 2500;
   let i = 0;
 
   function typeEffect() {
     if (text.charAt(i) == "l") {
       setTimeout(() => {
-        document.getElementsByClassName("main-title")[0].innerHTML = document.getElementsByClassName("main-title")[0].innerHTML.slice(0, -1);
+        document.getElementsByClassName("main-title")[0].innerHTML = document
+          .getElementsByClassName("main-title")[0]
+          .innerHTML.slice(0, -1);
       }, 500);
-      
+
       setTimeout(() => {
         document.getElementsByClassName("main-title")[0].innerHTML += "l";
       }, 1000);
@@ -64,10 +66,19 @@
       opacity: 0;
     }
   }
+  @media (max-height: 900px) {
+    .main-content {
+      margin-top: 200px;
+    }
+  }
 
-  .main-content {
+  @media (min-height: 900px) {
+    .main-content {
     margin-top: 250px;
   }
+  }
+
+  
 
   .main-title {
     color: #f5f5f5;
